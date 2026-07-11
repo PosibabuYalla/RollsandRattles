@@ -1,0 +1,158 @@
+/* Footer styles duplicated from homepage/style.css — kept as a standalone reference copy.
+   Edit homepage/style.css for the live site; mirror changes here manually. */
+
+:root {
+  --navy: #1B2A4E;
+  --pink: #FF4D94;
+  --blue: #2F6FED;
+  --gray: #6B7280;
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --hdr-primary: #09ADE9;
+  --hdr-secondary: #DDF3F5;
+  --hdr-accent: #ECAACC;
+  --hdr-support: #B8C6E0;
+  --hdr-bg: #FFF1F5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.icon {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.brand-name .pink { color: var(--pink); }
+.brand-name .blue { color: var(--blue); }
+
+.brand-sub {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--navy);
+  margin-top: 2px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 44px 0 20px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+
+.footer-brand .brand-sub {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--hdr-primary);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--hdr-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 34px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =====================================================
+   ≥ 640px — small tablets
+   ===================================================== */
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 28px;
+  }
+}
+
+/* =====================================================
+   ≥ 960px — desktop
+   ===================================================== */
+
+@media (min-width: 960px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 22px;
+  }
+}

@@ -1067,6 +1067,7 @@ a { text-decoration: none; color: inherit; }
   height: 52px;
   min-width: 52px;
   border-radius: 15px;
+  background: var(--hdr-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1386,6 +1387,7 @@ a { text-decoration: none; color: inherit; }
   height: 38px;
   min-width: 38px;
   border-radius: 50%;
+  background: var(--hdr-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
