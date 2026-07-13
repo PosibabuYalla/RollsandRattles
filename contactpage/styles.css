@@ -429,16 +429,21 @@ a { text-decoration: none; color: inherit; }
 
 .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
 
-.hero-image { position: relative; overflow: visible; border-radius: 28px; }
+.hero-image {
+  position: relative;
+  overflow: visible;
+  background: none;
+  border-radius: 0;
+}
 
 .hero-image img {
   width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  border-radius: 28px;
-  box-shadow: 0 30px 60px rgba(27, 42, 78, 0.18);
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* =====================================================
@@ -992,11 +997,13 @@ a { text-decoration: none; color: inherit; }
   .section-title { font-size: 38px; }
 
   .hero { padding-top: 30px; }
-  .hero-inner { grid-template-columns: 0.95fr 1.15fr; gap: 40px; text-align: left; }
+  .hero-inner { grid-template-columns: 0.95fr 1.15fr; gap: 40px; align-items: end; text-align: left; }
   .hero-content { margin: 0; }
   .hero-heading { font-size: 52px; align-items: flex-start; }
   .hero-sub { margin-top: 22px; font-size: 17px; }
   .hero-buttons { justify-content: flex-start; margin-top: 32px; gap: 16px; }
+  .hero-image { margin-right: -40px; }
+  .hero-image img { width: calc(100% + 40px); max-width: calc(100% + 40px); }
 
   .info-grid { grid-template-columns: repeat(4, 1fr); }
   .info-card.feature { grid-column: span 2; grid-row: span 1; }

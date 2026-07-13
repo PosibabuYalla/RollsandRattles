@@ -1,0 +1,521 @@
+/* Contact page — sections not already covered by assets/css/style.css
+   (header, footer, hero base, buttons, section scaffolding, stats-bar
+   are shared and already loaded). */
+
+.tint-bg { background: var(--hdr-bg); }
+.tint-blue { background: linear-gradient(180deg, #ffffff, var(--hdr-secondary) 120%); }
+
+/* Buttons include a real <button type="submit"> on this page, so add the
+   reset properties homepage anchor-only buttons never needed. */
+.btn { cursor: pointer; border: none; font-family: var(--font-body); }
+
+/* Contact-page hero uses a slightly different heading scale/content width
+   than the homepage hero. The photo itself is unframed — no card background,
+   no shadow. On desktop it bleeds flush to the container's right edge and
+   sits flush against the bottom of the hero row (no residual padding/margin
+   from the shared .container side-padding or grid vertical-centering). */
+.hero-content { max-width: 540px; }
+
+.hero-image {
+  position: relative;
+  overflow: visible;
+  background: none;
+  border-radius: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* =====================================================
+   1. Contact Information — feature + stat rail
+   ===================================================== */
+
+.info-panel {
+  position: relative;
+  border-radius: 32px;
+  background: linear-gradient(155deg, var(--hdr-bg) 0%, #ffffff 60%);
+  padding: 26px 18px;
+  overflow: hidden;
+}
+
+.info-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+.info-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  padding: 22px 20px;
+  box-shadow: 0 14px 34px rgba(27, 42, 78, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover { transform: translateY(-6px); box-shadow: 0 22px 46px rgba(9, 173, 233, 0.16); }
+
+.info-card.feature { background: linear-gradient(150deg, rgba(9, 173, 233, 0.08), rgba(236, 170, 204, 0.14)); }
+
+.info-icon {
+  width: 48px; height: 48px; min-width: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+
+.info-eyebrow { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 6px; }
+.info-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 16.5px; color: var(--navy); margin-bottom: 8px; }
+.info-card p { font-size: 13px; line-height: 1.65; color: var(--gray); }
+.info-card .info-strong { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--navy); }
+
+.info-hours-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.info-hours-row .info-strong { font-size: 18px; }
+
+.shop-option-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 2px; }
+
+.shop-option-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.shop-option-list .opt-icon {
+  width: 28px; height: 28px; min-width: 28px;
+  border-radius: 9px;
+  background: var(--hdr-secondary);
+  color: var(--hdr-primary);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* =====================================================
+   2. Visit Our Showroom — map + highlight rail
+   ===================================================== */
+
+.showroom-grid { display: grid; grid-template-columns: 1fr; gap: 26px; align-items: stretch; }
+
+.showroom-map-wrap { position: relative; }
+
+.showroom-map {
+  width: 100%;
+  aspect-ratio: 4 / 3.4;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(27, 42, 78, 0.16);
+  border: 1px solid rgba(184, 198, 224, 0.3);
+}
+
+.showroom-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.showroom-float-tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  box-shadow: 0 10px 24px rgba(27, 42, 78, 0.14);
+}
+
+.showroom-float-tag .icon { color: var(--hdr-primary); }
+
+.showroom-side {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 26px 22px;
+  box-shadow: 0 20px 50px rgba(27, 42, 78, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showroom-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+
+.showroom-item { display: flex; align-items: flex-start; gap: 12px; }
+
+.showroom-item .check {
+  width: 30px; height: 30px; min-width: 30px;
+  border-radius: 50%;
+  background: var(--hdr-secondary);
+  color: var(--hdr-primary);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+
+.showroom-item strong { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--navy); display: block; }
+
+.showroom-side .btn-primary { width: 100%; margin-top: 22px; flex: unset; }
+
+/* =====================================================
+   3. Quick Contact Options — portal cards
+   ===================================================== */
+
+.quick-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+.quick-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  padding: 28px 24px;
+  isolation: isolate;
+  transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+  box-shadow: 0 18px 40px rgba(27, 42, 78, 0.09);
+}
+
+.quick-card:hover { transform: translateY(-8px); box-shadow: 0 28px 56px rgba(27, 42, 78, 0.18); }
+
+.quick-card.q-call { background: linear-gradient(155deg, #EAF6FF 0%, #DCEBFF 100%); }
+.quick-card.q-whatsapp { background: linear-gradient(155deg, var(--hdr-secondary) 0%, #CDEFF3 100%); }
+.quick-card.q-visit { background: linear-gradient(155deg, var(--hdr-bg) 0%, var(--hdr-accent) 130%); }
+
+.quick-card-ring {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 22px solid rgba(255, 255, 255, 0.5);
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.quick-card:hover .quick-card-ring { transform: scale(1.15) rotate(20deg); }
+
+.quick-icon {
+  position: relative;
+  z-index: 1;
+  width: 58px; height: 58px;
+  border-radius: 18px;
+  background: #ffffff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 22px rgba(27, 42, 78, 0.14);
+  margin-bottom: 18px;
+}
+
+.quick-card h3 { position: relative; z-index: 1; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--navy); margin-bottom: 8px; }
+.quick-card p { position: relative; z-index: 1; font-size: 13.5px; line-height: 1.6; color: rgba(27, 42, 78, 0.72); margin-bottom: 20px; }
+.quick-card .btn { position: relative; z-index: 1; flex: unset; width: 100%; }
+
+/* =====================================================
+   4. Send Us a Message — form + assurance panel
+   ===================================================== */
+
+.message-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: stretch; }
+
+.message-form-wrap {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 50px rgba(27, 42, 78, 0.08);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+
+.form-field { display: flex; flex-direction: column; gap: 7px; }
+.form-field label { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--navy);
+  background: var(--hdr-bg);
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: rgba(107, 114, 128, 0.7); }
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--hdr-primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(9, 173, 233, 0.12);
+}
+
+.form-field textarea { resize: vertical; min-height: 110px; font-family: var(--font-body); }
+
+.form-submit { width: 100%; margin-top: 4px; flex: unset; }
+
+.form-note { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 12px; color: var(--gray); }
+.form-note .icon { color: var(--hdr-primary); }
+
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #E7FAEF;
+  color: #1E8E4F;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-success.show { display: flex; }
+
+.assurance-panel {
+  border-radius: 28px;
+  padding: 28px 24px;
+  background: linear-gradient(160deg, var(--navy) 0%, #223a67 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+}
+
+.assurance-panel h3 { font-family: var(--font-display); font-weight: 800; font-size: 19px; }
+.assurance-panel > p { font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
+
+.assurance-item { display: flex; align-items: center; gap: 12px; }
+
+.assurance-item .a-icon {
+  width: 40px; height: 40px; min-width: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.assurance-item strong { display: block; font-size: 13.5px; }
+.assurance-item span { font-size: 12px; color: rgba(255, 255, 255, 0.65); }
+
+/* =====================================================
+   5. FAQ — accordion
+   ===================================================== */
+
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(27, 42, 78, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.faq-item.open { box-shadow: 0 16px 36px rgba(9, 173, 233, 0.14); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--navy);
+  text-align: left;
+}
+
+.faq-question .faq-plus {
+  width: 30px; height: 30px; min-width: 30px;
+  border-radius: 50%;
+  background: var(--hdr-secondary);
+  color: var(--hdr-primary);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.faq-item.open .faq-plus { transform: rotate(135deg); background: var(--hdr-primary); color: #fff; }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-answer p { padding: 0 20px 20px; font-size: 13.5px; line-height: 1.65; color: var(--gray); }
+
+/* =====================================================
+   6. Follow Our Journey — social cards
+   ===================================================== */
+
+.social-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+.social-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  padding: 26px 22px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  color: #fff;
+  transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+  box-shadow: 0 20px 44px rgba(27, 42, 78, 0.16);
+}
+
+.social-card:hover { transform: translateY(-8px); box-shadow: 0 28px 58px rgba(27, 42, 78, 0.26); }
+
+.social-card.s-instagram { background: linear-gradient(155deg, #F58529 0%, #DD2A7B 45%, #8134AF 100%); }
+.social-card.s-facebook { background: linear-gradient(155deg, #2F6FED 0%, #1B4FC4 100%); }
+.social-card.s-youtube { background: linear-gradient(155deg, #FF4D4D 0%, #C0182A 100%); }
+
+.social-icon {
+  width: 54px; height: 54px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+
+.social-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 19px; margin-bottom: 8px; }
+.social-card p { font-size: 13px; line-height: 1.55; color: rgba(255, 255, 255, 0.85); margin-bottom: 16px; }
+
+.social-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+
+.social-chips li {
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 11px;
+  border-radius: 999px;
+}
+
+.social-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: gap 0.25s ease;
+}
+
+.social-card:hover .social-cta { gap: 12px; }
+
+/* =====================================================
+   7. Visit Us Today — closing CTA panel
+   ===================================================== */
+
+.cta-panel {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--hdr-secondary) 0%, var(--hdr-bg) 55%, #ffffff 100%);
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.cta-panel .section-title { margin-bottom: 14px; }
+.cta-panel .section-sub { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+.cta-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 26px auto 0;
+  max-width: 560px;
+}
+
+.cta-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.cta-detail .visit-icon { background: #ffffff; }
+.cta-detail p { font-size: 13px; font-weight: 600; color: var(--navy); }
+.cta-detail span.cta-label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 2px; }
+
+.cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.cta-buttons .btn, .cta-buttons .whatsapp-btn { flex: 1 1 150px; }
+.cta-buttons .whatsapp-btn span { display: inline; }
+
+/* =====================================================
+   ≥ 480px
+   ===================================================== */
+
+@media (min-width: 480px) {
+  .form-row.two { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =====================================================
+   ≥ 640px — small tablets
+   ===================================================== */
+
+@media (min-width: 640px) {
+  .hero-heading { font-size: 38px; }
+
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+  .info-card.feature { grid-column: span 2; }
+
+  .quick-grid { grid-template-columns: repeat(3, 1fr); }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .showroom-grid { grid-template-columns: 1.15fr 0.85fr; }
+  .message-grid { grid-template-columns: 1.3fr 0.9fr; }
+}
+
+/* =====================================================
+   ≥ 768px — tablets
+   ===================================================== */
+
+@media (min-width: 768px) {
+  .hero-heading { font-size: 44px; }
+  .cta-detail-row { flex-direction: row; }
+  .cta-detail { flex: 1; }
+}
+
+/* =====================================================
+   ≥ 960px — desktop
+   ===================================================== */
+
+@media (min-width: 960px) {
+  .hero-inner { grid-template-columns: 0.95fr 1.15fr; gap: 40px; align-items: end; }
+  .hero-heading { font-size: 52px; }
+
+  .hero-image { margin-right: -40px; }
+  .hero-image img { width: calc(100% + 40px); max-width: calc(100% + 40px); }
+
+  .info-grid { grid-template-columns: repeat(4, 1fr); }
+  .info-card.feature { grid-column: span 2; grid-row: span 1; }
+
+  .quick-grid { gap: 22px; }
+  .message-form-wrap, .assurance-panel { padding: 36px; }
+  .cta-panel { padding: 56px; }
+}

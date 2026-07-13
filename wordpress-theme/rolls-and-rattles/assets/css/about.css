@@ -1,0 +1,529 @@
+/* About page — sections not already covered by assets/css/style.css
+   (header, footer, hero base, buttons, section scaffolding, stats-bar,
+   and review-card basics are shared and already loaded). */
+
+.tint-bg { background: var(--hdr-bg); }
+.tint-blue { background: linear-gradient(180deg, #ffffff, var(--hdr-secondary) 120%); }
+
+/* About-page hero uses a framed, shadowed photo instead of the homepage's
+   floating cutout image, and a slightly different heading scale. */
+.hero-image { border-radius: 28px; }
+
+.hero-image img {
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(27, 42, 78, 0.18);
+}
+
+/* =====================================================
+   1. Journey timeline — "Every Childhood Journey Starts Here"
+   ===================================================== */
+
+.journey { position: relative; }
+
+.journey-path {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 46px;
+}
+
+.journey-path::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--hdr-primary) 0, var(--hdr-primary) 8px,
+    transparent 8px, transparent 16px
+  );
+}
+
+.journey-stage { position: relative; padding-bottom: 34px; }
+.journey-stage:last-child { padding-bottom: 0; }
+
+.journey-node {
+  position: absolute;
+  left: -46px;
+  top: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px #ffffff, 0 8px 20px rgba(27, 42, 78, 0.14);
+}
+
+.journey-stage.reveal.in-view .journey-node {
+  animation: journey-pulse 1.8s ease-out 1;
+}
+
+@keyframes journey-pulse {
+  0% { box-shadow: 0 0 0 4px #ffffff, 0 0 0 0 rgba(9, 173, 233, 0.45); }
+  70% { box-shadow: 0 0 0 4px #ffffff, 0 0 0 14px rgba(9, 173, 233, 0); }
+  100% { box-shadow: 0 0 0 4px #ffffff, 0 8px 20px rgba(27, 42, 78, 0.14); }
+}
+
+.journey-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 14px 34px rgba(27, 42, 78, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(9, 173, 233, 0.15); }
+
+.journey-step {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--hdr-primary);
+  margin-bottom: 6px;
+}
+
+.journey-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.journey-card p { font-size: 13px; line-height: 1.55; color: var(--gray); }
+
+/* =====================================================
+   2. Discover Our Four Worlds
+   ===================================================== */
+
+.worlds-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+
+.world-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  min-height: 380px;
+  isolation: isolate;
+  box-shadow: 0 20px 46px rgba(27, 42, 78, 0.14);
+  transition: transform 0.4s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.world-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(27, 42, 78, 0.22); }
+
+.world-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.world-card:hover .world-photo { transform: scale(1.07); }
+
+.world-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 42, 78, 0.05) 0%, rgba(27, 42, 78, 0.15) 45%, rgba(15, 22, 43, 0.88) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.world-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.world-badge {
+  width: 52px; height: 52px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 22px rgba(27, 42, 78, 0.18);
+}
+
+.world-index {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.world-glass {
+  position: relative;
+  z-index: 2;
+  margin: 0 14px 14px;
+  padding: 18px 18px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.world-glass h3 { font-family: var(--font-display); font-weight: 800; font-size: 19px; color: #fff; margin-bottom: 4px; }
+
+.world-glass .world-tagline {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.world-list { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+
+.world-list li {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.world-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--navy);
+  background: #ffffff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: gap 0.25s ease;
+}
+
+.world-card:hover .world-cta { gap: 10px; }
+
+/* =====================================================
+   3. Shopping Made Simple
+   ===================================================== */
+
+.simple-path { position: relative; max-width: 640px; margin: 0 auto; padding-left: 40px; }
+
+.simple-path::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--hdr-support);
+}
+
+.simple-step { position: relative; padding-bottom: 30px; display: flex; gap: 16px; align-items: flex-start; }
+.simple-step:last-child { padding-bottom: 0; }
+
+.simple-num {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 18px rgba(27, 42, 78, 0.2);
+}
+
+.simple-step.reveal.in-view .simple-num { background: var(--hdr-primary); }
+
+.simple-body {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 12px 30px rgba(27, 42, 78, 0.06);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.simple-body:hover { transform: translateX(4px); box-shadow: 0 16px 36px rgba(9, 173, 233, 0.14); }
+
+.simple-icon {
+  width: 42px; height: 42px; min-width: 42px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.simple-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--navy); margin-bottom: 3px; }
+.simple-body p { font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+
+/* =====================================================
+   4. The Scale of Rolls & Rattles
+   ===================================================== */
+
+.scale-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+.scale-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 16px;
+  box-shadow: 0 14px 34px rgba(27, 42, 78, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scale-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(9, 173, 233, 0.15); }
+
+.scale-icon {
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+
+.scale-value { display: block; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--navy); line-height: 1.2; }
+.scale-label { display: block; font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+/* =====================================================
+   5. Explore Every Corner
+   ===================================================== */
+
+.corners-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+.corner-tile {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #F3F5F9;
+  box-shadow: 0 14px 30px rgba(27, 42, 78, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.corner-tile:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(27, 42, 78, 0.2); }
+
+.corner-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.corner-tile:hover .corner-photo { transform: scale(1.08); }
+
+.corner-info {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 16px 14px 14px;
+  background: linear-gradient(0deg, rgba(15, 22, 43, 0.92) 10%, rgba(15, 22, 43, 0.55) 60%, transparent 100%);
+  color: #fff;
+  transform: translateY(38%);
+  transition: transform 0.35s ease;
+}
+
+.corner-tile:hover .corner-info,
+.corner-tile:focus-within .corner-info { transform: translateY(0); }
+
+.corner-info h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+
+.corner-info p {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease 0.05s;
+}
+
+.corner-tile:hover .corner-info p,
+.corner-tile:focus-within .corner-info p { opacity: 1; max-height: 100px; }
+
+/* =====================================================
+   6. Trusted by Families — horizontal review scroller
+   ===================================================== */
+
+.review-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 8px 4px 18px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.review-scroll::-webkit-scrollbar { height: 6px; }
+.review-scroll::-webkit-scrollbar-thumb { background: var(--hdr-secondary); border-radius: 6px; }
+
+.review-scroll .review-card { scroll-snap-align: start; flex: 0 0 84%; }
+
+.review-tag {
+  align-self: flex-start;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--hdr-primary);
+  background: var(--hdr-secondary);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* =====================================================
+   7. A Day at Rolls & Rattles
+   ===================================================== */
+
+.day-rail { position: relative; max-width: 780px; margin: 0 auto; padding-left: 4px; }
+
+.day-rail::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--hdr-primary), var(--hdr-accent));
+}
+
+.day-stop { position: relative; display: flex; gap: 18px; padding-bottom: 30px; }
+.day-stop:last-child { padding-bottom: 0; }
+
+.day-badge {
+  position: relative;
+  z-index: 1;
+  width: 56px; height: 56px;
+  min-width: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 5px #fff, 0 10px 24px rgba(27, 42, 78, 0.16);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--hdr-primary);
+}
+
+.day-card {
+  flex: 1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 14px 32px rgba(27, 42, 78, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-card:hover { transform: translateY(-4px); box-shadow: 0 20px 42px rgba(9, 173, 233, 0.15); }
+
+.day-photo { width: 84px; height: 84px; min-width: 84px; border-radius: 16px; object-fit: cover; }
+
+.day-eyebrow {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--hdr-primary);
+  margin-bottom: 4px;
+}
+
+.day-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+.day-card p { font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+
+.day-stop.day-finale .day-badge {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 0 0 5px #fff, 0 10px 26px rgba(255, 77, 148, 0.4);
+}
+
+.day-stop.day-finale .day-card {
+  background: linear-gradient(135deg, var(--hdr-secondary), var(--hdr-bg));
+  box-shadow: 0 18px 40px rgba(255, 77, 148, 0.14);
+}
+
+/* =====================================================
+   8. Visit Us Today — panel wrapper (about page only)
+   ===================================================== */
+
+.visit-panel {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--hdr-secondary) 0%, var(--hdr-bg) 55%, #ffffff 100%);
+  padding: 34px 20px;
+}
+
+/* =====================================================
+   ≥ 480px
+   ===================================================== */
+
+@media (min-width: 480px) {
+  .review-scroll { padding-bottom: 8px; }
+}
+
+/* =====================================================
+   ≥ 640px — small tablets
+   ===================================================== */
+
+@media (min-width: 640px) {
+  .hero-heading { font-size: 40px; }
+
+  .worlds-grid { grid-template-columns: repeat(2, 1fr); }
+  .scale-grid { grid-template-columns: repeat(3, 1fr); }
+  .corners-grid { grid-template-columns: repeat(3, 1fr); }
+  .review-scroll { overflow: visible; scroll-snap-type: none; }
+  .review-scroll .review-card { flex: 1 1 0; }
+}
+
+/* =====================================================
+   ≥ 768px — tablets
+   ===================================================== */
+
+@media (min-width: 768px) {
+  .hero-heading { font-size: 46px; }
+}
+
+/* =====================================================
+   ≥ 960px — desktop
+   ===================================================== */
+
+@media (min-width: 960px) {
+  .hero-inner { grid-template-columns: 0.95fr 1.15fr; gap: 40px; }
+  .hero-heading { font-size: 54px; }
+
+  /* Journey — zig-zag layout */
+  .journey-path { padding-left: 0; max-width: 900px; }
+  .journey-path::before { left: 50%; margin-left: -1.5px; }
+
+  .journey-stage {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    gap: 0 30px;
+  }
+
+  .journey-node { position: static; grid-column: 2; justify-self: center; }
+  .journey-card { grid-column: 1; }
+  .journey-stage:nth-child(even) .journey-card { grid-column: 3; }
+  .journey-stage:nth-child(odd) .journey-card { text-align: right; }
+
+  .worlds-grid { grid-template-columns: repeat(4, 1fr); }
+  .world-card { min-height: 460px; }
+
+  .scale-grid { grid-template-columns: repeat(5, 1fr); }
+  .corners-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .simple-path { max-width: 760px; }
+
+  .visit-panel { padding: 56px; }
+}

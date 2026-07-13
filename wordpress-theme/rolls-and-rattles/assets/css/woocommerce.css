@@ -1,0 +1,47 @@
+/* Blends default WooCommerce markup with the R&R visual language.
+   WooCommerce ships its own layout CSS; these are brand touch-ups only. */
+
+.woocommerce-wrap { padding: 20px 0 10px; }
+
+.woocommerce ul.products li.product .price { color: var(--pink); font-weight: 700; }
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce #respond input#submit,
+.woocommerce input.button {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 12px 22px;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce input.button:hover {
+  background: var(--navy);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.woocommerce span.onsale {
+  background: var(--pink);
+  border-radius: 999px;
+  font-family: var(--font-body);
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  border-radius: 10px;
+  color: var(--navy);
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: var(--hdr-primary);
+  color: #fff;
+}
