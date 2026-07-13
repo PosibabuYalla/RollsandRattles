@@ -1,0 +1,173 @@
+<!-- ================= CONTACT INFORMATION COMPONENT ================= -->
+<section class="rr-c-info" id="contact-info" data-rr="c-info">
+  <style>
+    .rr-c-info {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --hdr-bg: #FFF1F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-info *, .rr-c-info *::before, .rr-c-info *::after { box-sizing: border-box; }
+    .rr-c-info .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-info .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-info .section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+    .rr-c-info .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-c-info .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-c-info .section-title .pink { color: var(--pink); }
+    .rr-c-info .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-c-info .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-info .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-info .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-c-info .info-panel {
+      position: relative; border-radius: 32px;
+      background: linear-gradient(155deg, var(--hdr-bg) 0%, #ffffff 60%);
+      padding: 26px 18px; overflow: hidden;
+    }
+
+    .rr-c-info .info-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+    .rr-c-info .info-card {
+      position: relative; background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 22px; padding: 22px 20px;
+      box-shadow: 0 14px 34px rgba(27, 42, 78, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rr-c-info .info-card:hover { transform: translateY(-6px); box-shadow: 0 22px 46px rgba(9, 173, 233, 0.16); }
+    .rr-c-info .info-card.feature { background: linear-gradient(150deg, rgba(9, 173, 233, 0.08), rgba(236, 170, 204, 0.14)); }
+
+    .rr-c-info .info-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .rr-c-info .icon-blue { background: #DCEBFF; color: #2F6FED; }
+    .rr-c-info .icon-pink { background: #FDE0EC; color: #FF4D94; }
+    .rr-c-info .icon-purple { background: #EDE3FB; color: #8B5CF6; }
+    .rr-c-info .icon-gold { background: #FDF0D3; color: #E8A317; }
+
+    .rr-c-info .info-eyebrow { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 6px; }
+    .rr-c-info .info-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 16.5px; color: var(--navy); margin: 0 0 8px; }
+    .rr-c-info .info-card p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--gray); }
+    .rr-c-info .info-card .info-strong { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--navy); }
+
+    .rr-c-info .info-hours-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .rr-c-info .info-hours-row .info-strong { font-size: 18px; }
+
+    .rr-c-info .shop-option-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 2px; padding: 0; }
+    .rr-c-info .shop-option-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--navy); }
+    .rr-c-info .shop-option-list .opt-icon {
+      width: 28px; height: 28px; min-width: 28px; border-radius: 9px; background: var(--hdr-secondary); color: var(--hdr-primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    @media (min-width: 640px) {
+      .rr-c-info .container { padding: 0 28px; }
+      .rr-c-info { padding: 72px 0; }
+      .rr-c-info .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .rr-c-info .info-card.feature { grid-column: span 2; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-info .section-title { font-size: 32px; }
+      .rr-c-info .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-info .container { padding: 0 40px; }
+      .rr-c-info { padding: 96px 0; }
+      .rr-c-info .section-head { margin-bottom: 44px; }
+      .rr-c-info .section-title { font-size: 38px; }
+      .rr-c-info .info-grid { grid-template-columns: repeat(4, 1fr); }
+      .rr-c-info .info-card.feature { grid-column: span 2; grid-row: span 1; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Reach Us</span>
+      <h2 class="section-title">Contact <span class="pink">Information</span></h2>
+      <p class="section-sub">Everything you need to plan your visit or get in touch, in one place.</p>
+    </div>
+
+    <div class="info-panel reveal">
+      <div class="info-grid">
+
+        <div class="info-card feature">
+          <span class="info-icon icon-pink">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <span class="info-eyebrow">Store Address</span>
+          <h3>Rolls &amp; Rattles (R&amp;R) Kids Mart</h3>
+          <p>Dr. No. 6, PVRDL Edifice, 7-475/1, Opposite IDBI Bank, Tulasamma Nagar, Poranki, Andhra Pradesh &ndash; 521137</p>
+        </div>
+
+        <div class="info-card">
+          <span class="info-icon icon-blue">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="info-eyebrow">Phone</span>
+          <h3>Call Anytime</h3>
+          <p class="info-strong">+91 88861 28686</p>
+        </div>
+
+        <div class="info-card">
+          <span class="info-icon icon-gold">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="info-eyebrow">Business Hours</span>
+          <h3>Monday &ndash; Sunday</h3>
+          <div class="info-hours-row"><span class="info-strong">10:30 AM &ndash; 9:30 PM</span></div>
+        </div>
+
+        <div class="info-card">
+          <span class="info-icon icon-purple">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <span class="info-eyebrow">Shopping Options</span>
+          <h3>Shop Your Way</h3>
+          <ul class="shop-option-list">
+            <li><span class="opt-icon"><svg class="icon" width="15" height="15" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>In-Store Shopping</li>
+            <li><span class="opt-icon"><svg class="icon" width="15" height="15" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>In-Store Pickup</li>
+            <li><span class="opt-icon"><svg class="icon" width="15" height="15" viewBox="0 0 24 24"><path d="M3 7h11v9H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>Home Delivery</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-info"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

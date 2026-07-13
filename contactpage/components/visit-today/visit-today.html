@@ -1,0 +1,155 @@
+<!-- ================= VISIT US TODAY (CLOSING CTA) COMPONENT ================= -->
+<section class="rr-c-visittoday" id="visit-today" data-rr="c-visittoday">
+  <style>
+    .rr-c-visittoday {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --hdr-bg: #FFF1F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-visittoday *, .rr-c-visittoday *::before, .rr-c-visittoday *::after { box-sizing: border-box; }
+    .rr-c-visittoday a { text-decoration: none; color: inherit; }
+    .rr-c-visittoday .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-visittoday .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-visittoday .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-c-visittoday .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0 0 14px; }
+    .rr-c-visittoday .section-title .pink { color: var(--pink); }
+    .rr-c-visittoday .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .rr-c-visittoday .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-visittoday .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-visittoday .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-c-visittoday .cta-panel {
+      position: relative; border-radius: 32px; overflow: hidden;
+      background: linear-gradient(135deg, var(--hdr-secondary) 0%, var(--hdr-bg) 55%, #ffffff 100%);
+      padding: 36px 20px; text-align: center;
+    }
+
+    .rr-c-visittoday .cta-detail-row { display: flex; flex-direction: column; gap: 12px; margin: 26px auto 0; max-width: 560px; }
+
+    .rr-c-visittoday .cta-detail {
+      display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 16px; padding: 14px 16px; text-align: left;
+    }
+    .rr-c-visittoday .cta-detail .visit-icon { background: #ffffff; }
+    .rr-c-visittoday .cta-detail p { margin: 0; font-size: 13px; font-weight: 600; color: var(--navy); }
+    .rr-c-visittoday .cta-detail span.cta-label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 2px; }
+
+    .rr-c-visittoday .visit-icon {
+      width: 42px; height: 42px; min-width: 42px; border-radius: 12px; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .rr-c-visittoday .cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+    .rr-c-visittoday .btn, .rr-c-visittoday .whatsapp-btn { flex: 1 1 150px; }
+
+    .rr-c-visittoday .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 16px; border-radius: 999px;
+      font-weight: 600; font-size: 13px; white-space: nowrap;
+    }
+    .rr-c-visittoday .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+    .rr-c-visittoday .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+    .rr-c-visittoday .whatsapp-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--hdr-primary); color: #fff;
+      border-radius: 999px; padding: 13px 16px; font-weight: 600; font-size: 13px; white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(9, 173, 233, 0.32); transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .rr-c-visittoday .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(9, 173, 233, 0.4); }
+    .rr-c-visittoday .whatsapp-btn span { display: inline; }
+
+    @media (min-width: 640px) {
+      .rr-c-visittoday .container { padding: 0 28px; }
+      .rr-c-visittoday { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-visittoday .section-title { font-size: 32px; }
+      .rr-c-visittoday .cta-detail-row { flex-direction: row; }
+      .rr-c-visittoday .cta-detail { flex: 1; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-visittoday .container { padding: 0 40px; }
+      .rr-c-visittoday { padding: 96px 0; }
+      .rr-c-visittoday .section-title { font-size: 38px; }
+      .rr-c-visittoday .cta-panel { padding: 56px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="cta-panel reveal">
+      <span class="eyebrow">Visit Us Today</span>
+      <h2 class="section-title">Your Child's Next <span class="pink">Favorite Store Awaits</span></h2>
+      <p class="section-sub">Come see, touch, and try before you buy &mdash; four floors of childhood wonder are waiting.</p>
+
+      <div class="cta-detail-row">
+        <div class="cta-detail">
+          <span class="visit-icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <p><span class="cta-label">Address</span>Dr. No. 6, PVRDL Edifice, Opposite IDBI Bank, Poranki</p>
+        </div>
+        <div class="cta-detail">
+          <span class="visit-icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg></span>
+          <p><span class="cta-label">Phone</span>+91 88861 28686</p>
+        </div>
+        <div class="cta-detail">
+          <span class="visit-icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p><span class="cta-label">Store Hours</span>10:30 AM &ndash; 9:30 PM, Every Day</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+          Get Directions
+        </a>
+        <a href="tel:+918886128686" class="btn btn-secondary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/918886128686" target="_blank" rel="noopener" class="whatsapp-btn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="currentColor" stroke="none"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-visittoday"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

@@ -1,0 +1,170 @@
+<!-- ================= FREQUENTLY ASKED QUESTIONS COMPONENT ================= -->
+<section class="rr-c-faq" id="faq" data-rr="c-faq">
+  <style>
+    .rr-c-faq {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-faq *, .rr-c-faq *::before, .rr-c-faq *::after { box-sizing: border-box; }
+    .rr-c-faq .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-faq .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-faq .section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+    .rr-c-faq .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-c-faq .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-c-faq .section-title .pink { color: var(--pink); }
+    .rr-c-faq .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-c-faq .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-faq .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-faq .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-c-faq .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+    .rr-c-faq .faq-item { background: #ffffff; border-radius: 18px; box-shadow: 0 10px 26px rgba(27, 42, 78, 0.06); overflow: hidden; transition: box-shadow 0.25s ease; }
+    .rr-c-faq .faq-item.open { box-shadow: 0 16px 36px rgba(9, 173, 233, 0.14); }
+
+    .rr-c-faq .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      background: none; border: none; cursor: pointer; padding: 18px 20px;
+      font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--navy); text-align: left;
+    }
+
+    .rr-c-faq .faq-question .faq-plus {
+      width: 30px; height: 30px; min-width: 30px; border-radius: 50%; background: var(--hdr-secondary); color: var(--hdr-primary);
+      display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+    .rr-c-faq .faq-item.open .faq-plus { transform: rotate(135deg); background: var(--hdr-primary); color: #fff; }
+
+    .rr-c-faq .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .rr-c-faq .faq-answer p { margin: 0; padding: 0 20px 20px; font-size: 13.5px; line-height: 1.65; color: var(--gray); }
+
+    @media (min-width: 640px) {
+      .rr-c-faq .container { padding: 0 28px; }
+      .rr-c-faq { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-faq .section-title { font-size: 32px; }
+      .rr-c-faq .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-faq .container { padding: 0 40px; }
+      .rr-c-faq { padding: 96px 0; }
+      .rr-c-faq .section-head { margin-bottom: 44px; }
+      .rr-c-faq .section-title { font-size: 38px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked <span class="pink">Questions</span></h2>
+      <p class="section-sub">Quick answers to what parents ask us most.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">What are your showroom timings?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>We're open every day of the week, including weekends and public holidays, from 10:30 AM to 9:30 PM.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Where are you located?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>We're at Dr. No. 6, PVRDL Edifice, 7-475/1, Opposite IDBI Bank, Tulasamma Nagar, Poranki, Andhra Pradesh &ndash; 521137.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Do you provide home delivery?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>Yes. Alongside in-store shopping and in-store pickup, we offer home delivery for your convenience.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Do you have parking?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>Yes, easy and convenient parking is available right outside our showroom.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Can I contact you on WhatsApp?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>Absolutely. Tap any WhatsApp button on this page to chat with our team instantly.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Do you stock bicycles for all age groups?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>Yes, our ground-floor Bicycle World has non-geared, geared, and electric cycles for kids, teens, and adults alike.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Do you sell newborn essentials?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>Yes, we carry a complete range of feeding, bathing, and daily-care essentials for newborns.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button">Which payment methods do you accept?<span class="faq-plus"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="faq-answer"><p>We accept cash, all major debit/credit cards, and UPI payments for a smooth checkout.</p></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-faq"]');
+      if (!root) return;
+
+      root.querySelectorAll('.faq-item').forEach(function (item) {
+        var question = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+        question.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          root.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+            if (openItem !== item) {
+              openItem.classList.remove('open');
+              openItem.querySelector('.faq-answer').style.maxHeight = null;
+            }
+          });
+          item.classList.toggle('open', !isOpen);
+          answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : null;
+        });
+      });
+
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

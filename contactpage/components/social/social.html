@@ -1,0 +1,168 @@
+<!-- ================= FOLLOW OUR JOURNEY COMPONENT ================= -->
+<section class="rr-c-social" id="social" data-rr="c-social">
+  <style>
+    .rr-c-social {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --hdr-bg: #FFF1F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: var(--hdr-bg);
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-social *, .rr-c-social *::before, .rr-c-social *::after { box-sizing: border-box; }
+    .rr-c-social a { text-decoration: none; color: inherit; }
+    .rr-c-social .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-social .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-social .section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+    .rr-c-social .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-c-social .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-c-social .section-title .pink { color: var(--pink); }
+    .rr-c-social .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-c-social .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-social .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-social .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-c-social .social-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+    .rr-c-social .social-card {
+      position: relative; overflow: hidden; border-radius: 26px; padding: 26px 22px; min-height: 260px;
+      display: flex; flex-direction: column; isolation: isolate; color: #fff;
+      transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+      box-shadow: 0 20px 44px rgba(27, 42, 78, 0.16);
+    }
+    .rr-c-social .social-card:hover { transform: translateY(-8px); box-shadow: 0 28px 58px rgba(27, 42, 78, 0.26); }
+
+    .rr-c-social .social-card.s-instagram { background: linear-gradient(155deg, #F58529 0%, #DD2A7B 45%, #8134AF 100%); }
+    .rr-c-social .social-card.s-facebook { background: linear-gradient(155deg, #2F6FED 0%, #1B4FC4 100%); }
+    .rr-c-social .social-card.s-youtube { background: linear-gradient(155deg, #FF4D4D 0%, #C0182A 100%); }
+
+    .rr-c-social .social-icon {
+      width: 54px; height: 54px; border-radius: 16px; background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+
+    .rr-c-social .social-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 19px; margin: 0 0 8px; }
+    .rr-c-social .social-card p { font-size: 13px; line-height: 1.55; color: rgba(255, 255, 255, 0.85); margin: 0 0 16px; }
+
+    .rr-c-social .social-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 20px; padding: 0; }
+    .rr-c-social .social-chips li {
+      font-size: 11px; font-weight: 600; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 11px; border-radius: 999px;
+    }
+
+    .rr-c-social .social-cta {
+      margin-top: auto; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+      background: #ffffff; color: var(--navy); font-weight: 700; font-size: 12.5px; padding: 10px 18px;
+      border-radius: 999px; transition: gap 0.25s ease;
+    }
+    .rr-c-social .social-card:hover .social-cta { gap: 12px; }
+
+    @media (min-width: 640px) {
+      .rr-c-social .container { padding: 0 28px; }
+      .rr-c-social { padding: 72px 0; }
+      .rr-c-social .social-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-social .section-title { font-size: 32px; }
+      .rr-c-social .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-social .container { padding: 0 40px; }
+      .rr-c-social { padding: 96px 0; }
+      .rr-c-social .section-head { margin-bottom: 44px; }
+      .rr-c-social .section-title { font-size: 38px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Stay Connected</span>
+      <h2 class="section-title">Follow Our <span class="pink">Journey</span></h2>
+      <p class="section-sub">Join our community for new arrivals, offers, and behind-the-scenes moments.</p>
+    </div>
+
+    <div class="social-grid">
+
+      <a href="#" class="social-card s-instagram reveal">
+        <span class="social-icon"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+        <h3>Instagram</h3>
+        <p>Real moments from the showroom floor, straight to your feed.</p>
+        <ul class="social-chips">
+          <li>New Arrivals</li>
+          <li>Latest Offers</li>
+          <li>Store Events</li>
+        </ul>
+        <span class="social-cta">Follow Us <svg class="icon" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a href="#" class="social-card s-facebook reveal">
+        <span class="social-icon"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><path d="M14 21v-7.5h2.5l.4-3H14V8.2c0-.9.3-1.5 1.6-1.5H17V4.1C16.7 4 15.8 4 14.8 4c-2.2 0-3.7 1.3-3.7 3.8v2.7H8.5v3H11V21h3z" fill="currentColor" stroke="none"/></svg></span>
+        <h3>Facebook</h3>
+        <p>Community updates, parenting tips, and everything happening at R&amp;R.</p>
+        <ul class="social-chips">
+          <li>Store Events</li>
+          <li>Parenting Inspiration</li>
+          <li>Latest Offers</li>
+        </ul>
+        <span class="social-cta">Like Our Page <svg class="icon" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a href="#" class="social-card s-youtube reveal">
+        <span class="social-icon"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><rect x="2" y="5.5" width="20" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.5l6 2.5-6 2.5v-5z" fill="currentColor" stroke="none"/></svg></span>
+        <h3>YouTube</h3>
+        <p>Product walkthroughs and store tours to help you shop smarter.</p>
+        <ul class="social-chips">
+          <li>Product Videos</li>
+          <li>New Arrivals</li>
+          <li>Store Events</li>
+        </ul>
+        <span class="social-cta">Subscribe <svg class="icon" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-social"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

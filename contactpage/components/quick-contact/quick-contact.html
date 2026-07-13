@@ -1,0 +1,153 @@
+<!-- ================= QUICK CONTACT OPTIONS COMPONENT ================= -->
+<section class="rr-c-quick" id="quick-contact" data-rr="c-quick">
+  <style>
+    .rr-c-quick {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --hdr-accent: #ECAACC;
+      --hdr-bg: #FFF1F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-quick *, .rr-c-quick *::before, .rr-c-quick *::after { box-sizing: border-box; }
+    .rr-c-quick a { text-decoration: none; color: inherit; }
+    .rr-c-quick .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-quick .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-quick .section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+    .rr-c-quick .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-c-quick .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-c-quick .section-title .pink { color: var(--pink); }
+    .rr-c-quick .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-c-quick .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-quick .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-quick .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-c-quick .quick-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+    .rr-c-quick .quick-card {
+      position: relative; overflow: hidden; border-radius: 26px; padding: 28px 24px; isolation: isolate;
+      transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+      box-shadow: 0 18px 40px rgba(27, 42, 78, 0.09);
+    }
+    .rr-c-quick .quick-card:hover { transform: translateY(-8px); box-shadow: 0 28px 56px rgba(27, 42, 78, 0.18); }
+
+    .rr-c-quick .quick-card.q-call { background: linear-gradient(155deg, #EAF6FF 0%, #DCEBFF 100%); }
+    .rr-c-quick .quick-card.q-whatsapp { background: linear-gradient(155deg, var(--hdr-secondary) 0%, #CDEFF3 100%); }
+    .rr-c-quick .quick-card.q-visit { background: linear-gradient(155deg, var(--hdr-bg) 0%, var(--hdr-accent) 130%); }
+
+    .rr-c-quick .quick-card-ring {
+      position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%;
+      border: 22px solid rgba(255, 255, 255, 0.5); z-index: 0; transition: transform 0.5s ease;
+    }
+    .rr-c-quick .quick-card:hover .quick-card-ring { transform: scale(1.15) rotate(20deg); }
+
+    .rr-c-quick .quick-icon {
+      position: relative; z-index: 1; width: 58px; height: 58px; border-radius: 18px; background: #ffffff;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 22px rgba(27, 42, 78, 0.14); margin-bottom: 18px;
+    }
+    .rr-c-quick .icon-blue { color: #2F6FED; }
+    .rr-c-quick .icon-green { color: #22B573; }
+    .rr-c-quick .icon-pink { color: #FF4D94; }
+
+    .rr-c-quick .quick-card h3 { position: relative; z-index: 1; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--navy); margin: 0 0 8px; }
+    .rr-c-quick .quick-card p { position: relative; z-index: 1; font-size: 13.5px; line-height: 1.6; color: rgba(27, 42, 78, 0.72); margin: 0 0 20px; }
+
+    .rr-c-quick .btn {
+      position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 24px; border-radius: 999px; font-weight: 600; font-size: 15px; white-space: nowrap; width: 100%;
+    }
+    .rr-c-quick .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+
+    @media (min-width: 640px) {
+      .rr-c-quick .container { padding: 0 28px; }
+      .rr-c-quick { padding: 72px 0; }
+      .rr-c-quick .quick-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-quick .section-title { font-size: 32px; }
+      .rr-c-quick .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-quick .container { padding: 0 40px; }
+      .rr-c-quick { padding: 96px 0; }
+      .rr-c-quick .section-head { margin-bottom: 44px; }
+      .rr-c-quick .section-title { font-size: 38px; }
+      .rr-c-quick .quick-grid { gap: 22px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Choose What Works For You</span>
+      <h2 class="section-title">Quick Contact <span class="pink">Options</span></h2>
+      <p class="section-sub">Three easy ways to reach the R&amp;R team &mdash; pick whichever feels most convenient.</p>
+    </div>
+
+    <div class="quick-grid">
+
+      <div class="quick-card q-call reveal">
+        <span class="quick-card-ring"></span>
+        <span class="quick-icon icon-blue"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg></span>
+        <h3>Call Us</h3>
+        <p>Speak directly with our team for quick answers and product availability.</p>
+        <a href="tel:+918886128686" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="#fff" stroke="none"/></svg>+91 88861 28686</a>
+      </div>
+
+      <div class="quick-card q-whatsapp reveal">
+        <span class="quick-card-ring"></span>
+        <span class="quick-icon icon-green"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="currentColor" stroke="none"/></svg></span>
+        <h3>WhatsApp</h3>
+        <p>Get instant product inquiries and assistance, right from your phone.</p>
+        <a href="https://wa.me/918886128686" target="_blank" rel="noopener" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="#fff" stroke="none"/></svg>Chat on WhatsApp</a>
+      </div>
+
+      <div class="quick-card q-visit reveal">
+        <span class="quick-card-ring"></span>
+        <span class="quick-icon icon-pink"><svg class="icon" width="26" height="26" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <h3>Visit Store</h3>
+        <p>Experience thousands of products across four massive shopping floors.</p>
+        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="#fff" stroke-width="1.8"/></svg>Get Directions</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-quick"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

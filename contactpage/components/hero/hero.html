@@ -1,0 +1,130 @@
+<!-- ================= CONTACT HERO COMPONENT ================= -->
+<!-- Self-contained: inline <style>, no external CSS/JS/fonts, no header/footer -->
+<section class="rr-c-hero" data-rr="c-hero">
+  <style>
+    .rr-c-hero {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      position: relative;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow: hidden;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-c-hero *, .rr-c-hero *::before, .rr-c-hero *::after { box-sizing: border-box; }
+    .rr-c-hero img { max-width: 100%; }
+    .rr-c-hero a { text-decoration: none; color: inherit; }
+    .rr-c-hero .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-c-hero .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-c-hero .hero-inner { display: grid; grid-template-columns: 1fr; align-items: center; gap: 32px; text-align: center; }
+    .rr-c-hero .hero-content { max-width: 540px; margin: 0 auto; }
+
+    .rr-c-hero .hero-heading {
+      font-family: var(--font-display); font-weight: 800; font-size: 30px; line-height: 1.2;
+      display: flex; flex-direction: column; align-items: center; margin: 0;
+    }
+    .rr-c-hero .hero-heading .navy { color: var(--navy); }
+    .rr-c-hero .hero-heading .pink { color: var(--pink); }
+
+    .rr-c-hero .hero-sub { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--gray); font-weight: 400; }
+
+    .rr-c-hero .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+
+    .rr-c-hero .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; flex: 1 1 148px;
+      padding: 13px 16px; border-radius: 999px; font-weight: 600; font-size: 13.5px; white-space: nowrap;
+    }
+    .rr-c-hero .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+    .rr-c-hero .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+
+    .rr-c-hero .hero-image { position: relative; overflow: visible; background: none; }
+    .rr-c-hero .hero-image img { width: 100%; max-width: 100%; height: auto; display: block; margin: 0; }
+
+    .rr-c-hero .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-c-hero .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-c-hero .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (min-width: 480px) {
+      .rr-c-hero .btn { flex: 0 1 auto; padding: 15px 24px; font-size: 15px; }
+    }
+
+    @media (min-width: 640px) {
+      .rr-c-hero .container { padding: 0 28px; }
+      .rr-c-hero .hero-heading { font-size: 38px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-c-hero .hero-heading { font-size: 44px; }
+      .rr-c-hero .hero-sub { font-size: 16px; }
+      .rr-c-hero .hero-buttons { gap: 14px; }
+      .rr-c-hero .btn { padding: 16px 30px; font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-c-hero .container { padding: 0 40px; }
+      .rr-c-hero { padding-top: 30px; }
+      .rr-c-hero .hero-inner { grid-template-columns: 0.95fr 1.15fr; gap: 40px; align-items: end; text-align: left; }
+      .rr-c-hero .hero-content { margin: 0; }
+      .rr-c-hero .hero-heading { font-size: 52px; align-items: flex-start; }
+      .rr-c-hero .hero-sub { margin-top: 22px; font-size: 17px; }
+      .rr-c-hero .hero-buttons { justify-content: flex-start; margin-top: 32px; gap: 16px; }
+      .rr-c-hero .hero-image { margin-right: -40px; }
+      .rr-c-hero .hero-image img { width: calc(100% + 40px); max-width: calc(100% + 40px); }
+    }
+  </style>
+
+  <div class="container hero-inner">
+
+    <div class="hero-content">
+      <h1 class="hero-heading">
+        <span class="navy">Let's Help You Find</span>
+        <span class="pink">Everything Your Child Needs</span>
+      </h1>
+      <p class="hero-sub">We're always ready to welcome you. Visit our showroom, give us a call, or connect with us on WhatsApp for product inquiries.</p>
+      <div class="hero-buttons">
+        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" stroke="#fff" stroke-width="1.8"/></svg>
+          Get Directions
+        </a>
+        <a href="https://wa.me/918886128686" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="#FF4D94" stroke="none"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image reveal">
+      <img src="" alt="Happy family arriving at Rolls &amp; Rattles Kids Mart showroom">
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="c-hero"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>
