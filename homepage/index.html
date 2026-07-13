@@ -4,107 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rolls &amp; Rattles Kids Mart</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<svg style="position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true">
-  <defs>
-    <symbol id="icon-bike" viewBox="0 0 24 24">
-      <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-baby" viewBox="0 0 24 24">
-      <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-car" viewBox="0 0 24 24">
-      <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="2" y="13" width="20" height="5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="7" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="17" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="icon-toy" viewBox="0 0 24 24">
-      <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="icon-trophy" viewBox="0 0 24 24">
-      <path d="M8 4h8v4a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <path d="M12 12v3M9 20h6M9.5 17h5l.5 3H9l.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-book" viewBox="0 0 24 24">
-      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5a2.5 2.5 0 0 1 2.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-shirt" viewBox="0 0 24 24">
-      <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-shoe" viewBox="0 0 24 24">
-      <path d="M3 18v-3.5c0-.8.5-1.5 1.3-1.8L10 10.5 14 6c.6-.6 1.6-.6 2.2 0L18 7.8c.7.7 1.8.9 2.7.5l.6-.3c.8-.4 1.7.4 1.4 1.2l-.7 2c-.3.9-1.1 1.5-2 1.5H8l-2 3H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-store" viewBox="0 0 24 24">
-      <rect x="4" y="3" width="16" height="18" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-tag" viewBox="0 0 24 24">
-      <path d="M11 3h5a2 2 0 0 1 2 2v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-4-4a2 2 0 0 1 0-2.8l8-8A2 2 0 0 1 11 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="15" cy="8" r="1.3" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="icon-truck" viewBox="0 0 24 24">
-      <path d="M3 7h11v9H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="7" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="17.5" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
-    </symbol>
-    <symbol id="icon-star" viewBox="0 0 24 24">
-      <path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1 6.1L12 16.8 6.8 19.7l1-6.1L3.4 9.4l6-.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-family" viewBox="0 0 24 24">
-      <circle cx="8" cy="7" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M3 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2M14 20v-1.5a3.5 3.5 0 0 1 3.5-3.5h1a3.5 3.5 0 0 1 3.5 3.5V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-bag" viewBox="0 0 24 24">
-      <path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-pin" viewBox="0 0 24 24">
-      <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-camera" viewBox="0 0 24 24">
-      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="12" cy="14" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="icon-user" viewBox="0 0 24 24">
-      <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-      <path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
-      <path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24">
-      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-  </defs>
-</svg>
+<!-- ================= HERO COMPONENT ================= -->
+<!-- Self-contained: inline <style>, no external CSS/JS/fonts, no header/footer -->
+<section class="rr-hero" data-rr="hero">
+  <style>
+    .rr-hero {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      position: relative;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow: hidden;
+      font-family: var(--font-body);
+      color: var(--navy);
+      box-sizing: border-box;
+    }
+    .rr-hero *, .rr-hero *::before, .rr-hero *::after { box-sizing: border-box; }
+    .rr-hero img { max-width: 100%; }
+    .rr-hero a { text-decoration: none; color: inherit; }
+    .rr-hero .icon { flex-shrink: 0; vertical-align: middle; }
 
-<section class="hero">
+    .rr-hero .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-hero .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .rr-hero .hero-content { max-width: 520px; margin: 0 auto; }
+
+    .rr-hero .hero-heading {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 1.18;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+    .rr-hero .hero-heading .navy { color: var(--navy); }
+    .rr-hero .hero-heading .pink { color: var(--pink); }
+
+    .rr-hero .hero-sub {
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    .rr-hero .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .rr-hero .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1 1 148px;
+      padding: 13px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13.5px;
+      white-space: nowrap;
+    }
+    .rr-hero .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+    .rr-hero .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+
+    .rr-hero .hero-image { position: relative; overflow: visible; }
+    .rr-hero .hero-image img { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+    .rr-hero .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 32px 0 40px;
+      box-shadow: 0 20px 50px rgba(27, 42, 78, 0.08);
+      gap: 18px 12px;
+    }
+
+    .rr-hero .stat { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+    .rr-hero .stat-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rr-hero .icon-blue { background: #DCEBFF; color: #2F6FED; }
+    .rr-hero .icon-pink { background: #FDE0EC; color: #FF4D94; }
+    .rr-hero .icon-purple { background: #EDE3FB; color: #8B5CF6; }
+    .rr-hero .icon-gold { background: #FDF0D3; color: #E8A317; }
+
+    .rr-hero .stat-text strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--navy); }
+    .rr-hero .stat-text p { margin: 0; font-size: 12.5px; color: var(--gray); font-weight: 400; }
+
+    .rr-hero .stat-divider { display: none; }
+
+    @media (min-width: 480px) {
+      .rr-hero .btn { flex: 0 1 auto; padding: 15px 24px; font-size: 15px; }
+    }
+
+    @media (min-width: 640px) {
+      .rr-hero .container { padding: 0 28px; }
+      .rr-hero .hero-heading { font-size: 38px; }
+      .rr-hero .stats-bar { grid-template-columns: repeat(3, 1fr); padding: 26px 30px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-hero .hero-heading { font-size: 44px; }
+      .rr-hero .hero-sub { font-size: 16px; }
+      .rr-hero .hero-buttons { gap: 14px; }
+      .rr-hero .btn { padding: 16px 30px; font-size: 15.5px; }
+      .rr-hero .stats-bar { gap: 22px 18px; padding: 28px 34px; }
+      .rr-hero .stat-icon { width: 46px; height: 46px; min-width: 46px; }
+      .rr-hero .stat-text strong { font-size: 17px; }
+      .rr-hero .stat-text p { font-size: 13px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-hero .container { padding: 0 40px; }
+      .rr-hero .hero { padding-top: 30px; }
+      .rr-hero .hero-inner { grid-template-columns: 0.85fr 1.3fr; gap: 10px; text-align: left; }
+      .rr-hero .hero-content { margin: 0; }
+      .rr-hero .hero-heading { font-size: 52px; align-items: flex-start; }
+      .rr-hero .hero-sub { margin-top: 22px; font-size: 17px; }
+      .rr-hero .hero-buttons { justify-content: flex-start; margin-top: 32px; gap: 16px; }
+      .rr-hero .hero-image img { width: 122%; max-width: 122%; }
+      .rr-hero .stats-bar { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 30px 40px; margin: 50px 0 60px; gap: 20px; }
+      .rr-hero .stat-icon { width: 48px; height: 48px; min-width: 48px; }
+      .rr-hero .stat-text strong { font-size: 20px; white-space: nowrap; }
+      .rr-hero .stat-text p { font-size: 14px; white-space: nowrap; }
+    }
+
+    @media (min-width: 1100px) {
+      .rr-hero .stat-divider { display: block; width: 1px; height: 46px; background: #EAEAF0; }
+    }
+  </style>
+
   <div class="container hero-inner">
 
     <div class="hero-content">
@@ -127,7 +183,7 @@
     </div>
 
     <div class="hero-image">
-      <img src="assests\Rolls_and_Rattles_Hero_Image.webp" alt="Happy family shopping at Rolls &amp; Rattles Kids Mart">
+      <img src="../../assests/Rolls_and_Rattles_Hero_Image.webp" alt="Happy family shopping at Rolls &amp; Rattles Kids Mart">
     </div>
 
   </div>
@@ -137,7 +193,7 @@
 
       <div class="stat">
         <span class="stat-icon icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1.5" stroke="#2F6FED" stroke-width="1.8"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" stroke="#2F6FED" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1.5" stroke="#2F6FED" stroke-width="1.8"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" stroke="#2F6FED" stroke-width="1.8" stroke-linecap="round"/></svg>
         </span>
         <span class="stat-text"><strong>4</strong><p>Massive Floors</p></span>
       </div>
@@ -146,7 +202,7 @@
 
       <div class="stat">
         <span class="stat-icon icon-pink">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8z" stroke="#FF4D94" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#FF4D94" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8z" stroke="#FF4D94" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#FF4D94" stroke-width="1.8" stroke-linecap="round"/></svg>
         </span>
         <span class="stat-text"><strong>10,000+</strong><p>Products</p></span>
       </div>
@@ -155,7 +211,7 @@
 
       <div class="stat">
         <span class="stat-icon icon-purple">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1 6.1L12 16.8 6.8 19.7l1-6.1L3.4 9.4l6-.8L12 3z" stroke="#8B5CF6" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1 6.1L12 16.8 6.8 19.7l1-6.1L3.4 9.4l6-.8L12 3z" stroke="#8B5CF6" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </span>
         <span class="stat-text"><strong>500+</strong><p>Premium Brands</p></span>
       </div>
@@ -164,19 +220,142 @@
 
       <div class="stat">
         <span class="stat-icon icon-gold">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 3h5a2 2 0 0 1 2 2v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-4-4a2 2 0 0 1 0-2.8l8-8A2 2 0 0 1 11 3z" stroke="#E8A317" stroke-width="1.8" stroke-linejoin="round"/><circle cx="15" cy="8" r="1.3" fill="#E8A317"/></svg>
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 3h5a2 2 0 0 1 2 2v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-4-4a2 2 0 0 1 0-2.8l8-8A2 2 0 0 1 11 3z" stroke="#E8A317" stroke-width="1.8" stroke-linejoin="round"/><circle cx="15" cy="8" r="1.3" fill="#E8A317"/></svg>
         </span>
         <span class="stat-text"><strong>Discount</strong><p>On Every Product</p></span>
       </div>
-
-      
 
     </div>
   </div>
 </section>
 
-<!-- ================= SHOP BY CATEGORY ================= -->
-<section class="section categories" id="categories">
+<!-- ================= SHOP BY CATEGORY COMPONENT ================= -->
+<section class="rr-categories" id="categories" data-rr="categories">
+  <style>
+    .rr-categories {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-categories *, .rr-categories *::before, .rr-categories *::after { box-sizing: border-box; }
+    .rr-categories img { max-width: 100%; }
+    .rr-categories a { text-decoration: none; color: inherit; }
+    .rr-categories .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-categories .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-categories .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-categories .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-categories .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-categories .section-title .pink { color: var(--pink); }
+    .rr-categories .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-categories .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-categories .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-categories .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-categories .category-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+    .rr-categories .category-tile {
+      position: relative; overflow: hidden; border-radius: 26px; padding: 20px; min-height: 220px;
+      isolation: isolate; display: block;
+      transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+    }
+    .rr-categories .category-tile:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27, 42, 78, 0.16); }
+
+    .rr-categories .category-tile-bgicon {
+      position: absolute; top: -18px; right: -18px; opacity: 0.16; transform: rotate(-10deg);
+      transition: transform 0.5s ease, opacity 0.5s ease; z-index: 0;
+    }
+    .rr-categories .category-tile:hover .category-tile-bgicon { transform: rotate(0deg) scale(1.08); opacity: 0.24; }
+
+    .rr-categories .category-tile-photo {
+      position: absolute; z-index: 1; right: 0; bottom: 0; width: 58%; max-width: 210px; height: auto;
+      max-height: 92%; object-fit: contain; object-position: bottom right;
+      filter: drop-shadow(0 12px 16px rgba(27, 42, 78, 0.18));
+      transition: transform 0.35s ease; pointer-events: none;
+    }
+    .rr-categories .category-tile:hover .category-tile-photo { transform: scale(1.05) translateY(-4px); }
+
+    .rr-categories .category-tile-content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; max-width: 50%; }
+
+    .rr-categories .category-tile-icon {
+      width: 40px; height: 40px; min-width: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.8);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .rr-categories .category-tile-body { margin-top: auto; }
+    .rr-categories .category-tile-body h3 { font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--navy); margin: 0 0 6px; }
+    .rr-categories .category-tile-body p { margin: 0; font-size: 12.5px; line-height: 1.5; color: rgba(27, 42, 78, 0.7); }
+
+    .rr-categories .category-tile-cta {
+      display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; gap: 6px; margin-top: 14px;
+      font-weight: 600; font-size: 12.5px; color: var(--navy); background: #ffffff; padding: 10px 16px;
+      border-radius: 999px; box-shadow: 0 6px 16px rgba(27, 42, 78, 0.1);
+      transition: gap 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .rr-categories .category-tile-cta .icon { transition: transform 0.25s ease; }
+    .rr-categories .category-tile:hover .category-tile-cta { gap: 10px; background: var(--navy); color: #fff; }
+
+    .rr-categories .category-tile.cat-blue { background: linear-gradient(160deg, #EEF7FF, #DCEBFF); }
+    .rr-categories .category-tile.cat-pink { background: linear-gradient(160deg, #FFF1F7, #FDE0EC); }
+    .rr-categories .category-tile.cat-purple { background: linear-gradient(160deg, #F4F0FD, #EDE3FB); }
+    .rr-categories .category-tile.cat-gold { background: linear-gradient(160deg, #FFF8EB, #FDF0D3); }
+    .rr-categories .category-tile.cat-green { background: linear-gradient(160deg, #EAFAF1, #DFF5E6); }
+
+    .rr-categories .cat-blue .category-tile-bgicon, .rr-categories .cat-blue .category-tile-icon { color: #2F6FED; }
+    .rr-categories .cat-pink .category-tile-bgicon, .rr-categories .cat-pink .category-tile-icon { color: #FF4D94; }
+    .rr-categories .cat-purple .category-tile-bgicon, .rr-categories .cat-purple .category-tile-icon { color: #8B5CF6; }
+    .rr-categories .cat-gold .category-tile-bgicon, .rr-categories .cat-gold .category-tile-icon { color: #E8A317; }
+    .rr-categories .cat-green .category-tile-bgicon, .rr-categories .cat-green .category-tile-icon { color: #22B573; }
+
+    @media (min-width: 640px) {
+      .rr-categories .container { padding: 0 28px; }
+      .rr-categories { padding: 72px 0; }
+      .rr-categories .category-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-categories .section-title { font-size: 32px; }
+      .rr-categories .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-categories .container { padding: 0 40px; max-width: 1480px; }
+      .rr-categories { padding: 96px 0; }
+      .rr-categories .section-head { margin-bottom: 44px; }
+      .rr-categories .section-title { font-size: 38px; }
+      .rr-categories .category-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(230px, auto); grid-auto-flow: dense; gap: 22px; }
+      .rr-categories .category-tile { padding: 28px; }
+      .rr-categories .category-tile.cat-feature { grid-column: span 2; grid-row: span 2; min-height: 420px; padding: 30px; }
+      .rr-categories .category-tile.cat-feature .category-tile-content { max-width: 38%; }
+      .rr-categories .category-tile.cat-feature .category-tile-body h3 { font-size: 26px; }
+      .rr-categories .category-tile.cat-feature .category-tile-body p { font-size: 14.5px; }
+      .rr-categories .category-tile.cat-feature .category-tile-cta { font-size: 13.5px; padding: 12px 20px; }
+      .rr-categories .category-tile.cat-wide { grid-column: span 2; min-height: 220px; }
+      .rr-categories .category-tile.cat-wide .category-tile-content { max-width: 42%; }
+      .rr-categories .category-tile-bgicon { width: 130px; height: 130px; }
+      .rr-categories .category-tile.cat-feature .category-tile-bgicon { width: 170px; height: 170px; }
+      .rr-categories .category-tile-photo { max-width: 250px; max-height: 92%; }
+      .rr-categories .category-tile.cat-feature .category-tile-photo { width: 84%; max-width: 580px; max-height: 100%; right: 0; bottom: 0; margin-left: 20px; }
+      .rr-categories .category-tile.cat-wide .category-tile-photo { width: 50%; max-width: 300px; }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Shop by Category</span>
@@ -186,116 +365,312 @@
 
     <div class="category-grid">
 
-      <a href="products/bicycles.html" class="category-tile cat-blue cat-feature reveal">
-        <svg class="category-tile-bgicon" width="120" height="120"><use href="#icon-bike"></use></svg>
+      <a href="../../products/bicycles.html" class="category-tile cat-blue cat-feature reveal">
+        <svg class="category-tile-bgicon" width="120" height="120" viewBox="0 0 24 24">
+          <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Bicycle-Store.webp" alt="Bicycles at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="24" height="24"><use href="#icon-bike"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Bicycles</h3>
             <p>Largest collection of geared, non-geared, and electric bicycles from trusted brands.</p>
-            <span class="category-tile-cta">Shop Bicycles <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Bicycles <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/newborn-essentials.html" class="category-tile cat-pink reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-baby"></use></svg>
+      <a href="../../products/newborn-essentials.html" class="category-tile cat-pink reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Baby-Essentials-store.webp" alt="Newborn Essentials at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-baby"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Newborn Essentials</h3>
             <p>Feeding, walkers, prams, strollers, and daily baby care.</p>
-            <span class="category-tile-cta">Shop Newborn <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Newborn <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/ride-on-cars-bikes.html" class="category-tile cat-purple reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-car"></use></svg>
+      <a href="../../products/ride-on-cars-bikes.html" class="category-tile cat-purple reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="2" y="13" width="20" height="5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="7" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Car-bike-scooty-store.webp" alt="Ride-On Cars &amp; Bikes at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-car"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="2" y="13" width="20" height="5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="7" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Ride-On Cars &amp; Bikes</h3>
             <p>Battery-operated cars, bikes, and fun mobility toys.</p>
-            <span class="category-tile-cta">Shop Ride-Ons <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Ride-Ons <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/toys.html" class="category-tile cat-gold reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-toy"></use></svg>
+      <a href="../../products/toys.html" class="category-tile cat-gold reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Playful-toys-store-1.webp" alt="Toys at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-toy"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Toys</h3>
             <p>Educational toys, soft toys, puzzles, and board games.</p>
-            <span class="category-tile-cta">Shop Toys <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Toys <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/sports.html" class="category-tile cat-green cat-wide reveal">
-        <svg class="category-tile-bgicon" width="100" height="100"><use href="#icon-trophy"></use></svg>
+      <a href="../../products/sports.html" class="category-tile cat-green cat-wide reveal">
+        <svg class="category-tile-bgicon" width="100" height="100" viewBox="0 0 24 24">
+          <path d="M8 4h8v4a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M12 12v3M9 20h6M9.5 17h5l.5 3H9l.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Sports-Store.webp" alt="Sports at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="24" height="24"><use href="#icon-trophy"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M8 4h8v4a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M12 12v3M9 20h6M9.5 17h5l.5 3H9l.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Sports</h3>
             <p>Cricket, football, badminton, skating, swimming, and outdoor play equipment.</p>
-            <span class="category-tile-cta">Shop Sports Gear <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Sports Gear <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/stationery.html" class="category-tile cat-blue reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-book"></use></svg>
+      <a href="../../products/stationery.html" class="category-tile cat-blue reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5a2.5 2.5 0 0 1 2.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Stationary-Store.webp" alt="Stationery at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-book"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5a2.5 2.5 0 0 1 2.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Stationery</h3>
             <p>School essentials, art supplies, and craft products.</p>
-            <span class="category-tile-cta">Shop Stationery <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Stationery <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/clothing.html" class="category-tile cat-pink reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-shirt"></use></svg>
+      <a href="../../products/clothing.html" class="category-tile cat-pink reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Kids-clothing-Store.webp" alt="Clothing at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-shirt"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Clothing (0&ndash;6 Years)</h3>
             <p>Casual wear, party wear, and themed dresses.</p>
-            <span class="category-tile-cta">Shop Clothing <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Clothing <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
-      <a href="products/footwear.html" class="category-tile cat-purple reveal">
-        <svg class="category-tile-bgicon" width="90" height="90"><use href="#icon-shoe"></use></svg>
+      <a href="../../products/footwear.html" class="category-tile cat-purple reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M3 18v-3.5c0-.8.5-1.5 1.3-1.8L10 10.5 14 6c.6-.6 1.6-.6 2.2 0L18 7.8c.7.7 1.8.9 2.7.5l.6-.3c.8-.4 1.7.4 1.4 1.2l-.7 2c-.3.9-1.1 1.5-2 1.5H8l-2 3H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
         <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Kids-Footwear-Store.webp" alt="Footwear at Rolls &amp; Rattles Kids Mart" loading="lazy">
         <div class="category-tile-content">
-          <span class="category-tile-icon"><svg class="icon" width="22" height="22"><use href="#icon-shoe"></use></svg></span>
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M3 18v-3.5c0-.8.5-1.5 1.3-1.8L10 10.5 14 6c.6-.6 1.6-.6 2.2 0L18 7.8c.7.7 1.8.9 2.7.5l.6-.3c.8-.4 1.7.4 1.4 1.2l-.7 2c-.3.9-1.1 1.5-2 1.5H8l-2 3H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
           <div class="category-tile-body">
             <h3>Footwear (0&ndash;6 Years)</h3>
             <p>Comfortable and stylish footwear for babies and kids.</p>
-            <span class="category-tile-cta">Shop Footwear <svg class="icon" width="14" height="14"><use href="#icon-arrow"></use></svg></span>
+            <span class="category-tile-cta">Shop Footwear <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
       </a>
 
     </div>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="categories"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= EXPLORE OUR 4 FLOORS ================= -->
-<section class="section floors" id="floors">
+<!-- ================= EXPLORE OUR 4 FLOORS COMPONENT ================= -->
+<section class="rr-floors" id="floors" data-rr="floors">
+  <style>
+    .rr-floors {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-floors *, .rr-floors *::before, .rr-floors *::after { box-sizing: border-box; }
+    .rr-floors .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-floors .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-floors .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-floors .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-floors .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-floors .section-title .pink { color: var(--pink); }
+    .rr-floors .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-floors .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-floors .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-floors .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-floors .floor-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 24px; }
+    .rr-floors .floor-tab {
+      display: flex; align-items: center; gap: 8px; background: #ffffff; border: 1.5px solid var(--hdr-secondary);
+      border-radius: 999px; padding: 10px 18px 10px 10px; font-weight: 600; font-size: 13px; color: var(--navy);
+      cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .rr-floors .floor-tab-badge {
+      width: 22px; height: 22px; min-width: 22px; border-radius: 50%; background: var(--hdr-secondary); color: var(--hdr-primary);
+      display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 11.5px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .rr-floors .floor-tab:hover { border-color: var(--hdr-primary); }
+    .rr-floors .floor-tab.active { background: var(--hdr-primary); border-color: var(--hdr-primary); color: #fff; box-shadow: 0 10px 24px rgba(9, 173, 233, 0.3); }
+    .rr-floors .floor-tab.active .floor-tab-badge { background: #fff; color: var(--hdr-primary); }
+
+    .rr-floors .floor-panel { display: none; background: #ffffff; border-radius: 24px; padding: 24px 18px; box-shadow: 0 20px 50px rgba(27, 42, 78, 0.08); }
+    .rr-floors .floor-panel.active { display: block; animation: rr-floor-fade-up 0.4s ease; }
+    @keyframes rr-floor-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    .rr-floors .floor-panel-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #F0F1F5; }
+    .rr-floors .floor-panel-icon {
+      width: 52px; height: 52px; min-width: 52px; border-radius: 15px; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+    }
+    .rr-floors .icon-blue { color: #2F6FED; } .rr-floors .icon-pink { color: #FF4D94; }
+    .rr-floors .icon-purple { color: #8B5CF6; } .rr-floors .icon-gold { color: #E8A317; }
+
+    .rr-floors .floor-panel-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 4px; }
+    .rr-floors .floor-panel-head h3 { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--navy); margin: 0; }
+
+    .rr-floors .floor-groups { display: grid; grid-template-columns: 1fr; gap: 22px; }
+    .rr-floors .floor-group h4 { font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy); margin: 0 0 12px; }
+    .rr-floors .floor-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; }
+    .rr-floors .floor-list li { font-size: 13px; color: var(--gray); padding-left: 16px; position: relative; }
+    .rr-floors .floor-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--hdr-primary); }
+
+    .rr-floors .brand-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .rr-floors .brand-chip { background: var(--hdr-secondary); color: var(--navy); font-size: 12px; font-weight: 600; padding: 7px 14px; border-radius: 999px; }
+
+    @media (min-width: 640px) {
+      .rr-floors .container { padding: 0 28px; }
+      .rr-floors { padding: 72px 0; }
+      .rr-floors .floor-groups, .rr-floors .floor-groups--3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .rr-floors .section-title { font-size: 32px; }
+      .rr-floors .section-sub { font-size: 15.5px; }
+      .rr-floors .floor-groups--3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 960px) {
+      .rr-floors .container { padding: 0 40px; }
+      .rr-floors { padding: 96px 0; }
+      .rr-floors .section-head { margin-bottom: 44px; }
+      .rr-floors .section-title { font-size: 38px; }
+      .rr-floors .floor-tab { font-size: 14.5px; padding: 12px 22px 12px 12px; }
+      .rr-floors .floor-panel { padding: 36px; }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Explore Our 4 Floors</span>
@@ -303,7 +678,7 @@
       <p class="section-sub">Each floor is thoughtfully organized to help you find exactly what your child needs.</p>
     </div>
 
-    <div class="floor-tabs reveal" id="floorTabs">
+    <div class="floor-tabs reveal" id="rrFloorTabs">
       <button class="floor-tab active" type="button" data-floor="ground"><span class="floor-tab-badge">G</span>Ground Floor</button>
       <button class="floor-tab" type="button" data-floor="first"><span class="floor-tab-badge">1</span>First Floor</button>
       <button class="floor-tab" type="button" data-floor="second"><span class="floor-tab-badge">2</span>Second Floor</button>
@@ -314,7 +689,13 @@
 
       <div class="floor-panel active" data-floor="ground">
         <div class="floor-panel-head">
-          <span class="floor-panel-icon icon-blue"><svg class="icon" width="26" height="26"><use href="#icon-bike"></use></svg></span>
+          <span class="floor-panel-icon icon-blue">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div>
             <span class="floor-panel-eyebrow">Ground Floor</span>
             <h3>Bicycle World</h3>
@@ -348,7 +729,13 @@
 
       <div class="floor-panel" data-floor="first">
         <div class="floor-panel-head">
-          <span class="floor-panel-icon icon-pink"><svg class="icon" width="26" height="26"><use href="#icon-baby"></use></svg></span>
+          <span class="floor-panel-icon icon-pink">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div>
             <span class="floor-panel-eyebrow">First Floor</span>
             <h3>Kids Mobility &amp; Sports</h3>
@@ -388,7 +775,13 @@
 
       <div class="floor-panel" data-floor="second">
         <div class="floor-panel-head">
-          <span class="floor-panel-icon icon-purple"><svg class="icon" width="26" height="26"><use href="#icon-toy"></use></svg></span>
+          <span class="floor-panel-icon icon-purple">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
           <div>
             <span class="floor-panel-eyebrow">Second Floor</span>
             <h3>Baby &amp; Toy World</h3>
@@ -425,7 +818,11 @@
 
       <div class="floor-panel" data-floor="third">
         <div class="floor-panel-head">
-          <span class="floor-panel-icon icon-gold"><svg class="icon" width="26" height="26"><use href="#icon-shirt"></use></svg></span>
+          <span class="floor-panel-icon icon-gold">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div>
             <span class="floor-panel-eyebrow">Third Floor</span>
             <h3>Fashion Corner</h3>
@@ -459,10 +856,122 @@
 
     </div>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="floors"]');
+      if (!root) return;
+
+      var floorTabs = root.querySelector('#rrFloorTabs');
+      if (floorTabs) {
+        var tabs = floorTabs.querySelectorAll('.floor-tab');
+        var panels = root.querySelectorAll('.floor-panel');
+        floorTabs.addEventListener('click', function (e) {
+          var tab = e.target.closest('.floor-tab');
+          if (!tab) return;
+          var floor = tab.dataset.floor;
+          tabs.forEach(function (t) { t.classList.toggle('active', t === tab); });
+          panels.forEach(function (p) { p.classList.toggle('active', p.dataset.floor === floor); });
+        });
+      }
+
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= WHY CHOOSE R&R ================= -->
-<section class="section why" id="why">
+<!-- ================= WHY CHOOSE R&R COMPONENT ================= -->
+<section class="rr-why" id="why" data-rr="why">
+  <style>
+    .rr-why {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-why *, .rr-why *::before, .rr-why *::after { box-sizing: border-box; }
+    .rr-why .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-why .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-why .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-why .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-why .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-why .section-title .pink { color: var(--pink); }
+
+    .rr-why .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-why .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-why .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-why .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    .rr-why .why-card {
+      background: #ffffff; border-radius: 20px; padding: 20px 16px; box-shadow: 0 14px 34px rgba(27, 42, 78, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rr-why .why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(9, 173, 233, 0.15); }
+
+    .rr-why .why-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
+    .rr-why .icon-blue { background: #DCEBFF; color: #2F6FED; }
+    .rr-why .icon-pink { background: #FDE0EC; color: #FF4D94; }
+    .rr-why .icon-purple { background: #EDE3FB; color: #8B5CF6; }
+    .rr-why .icon-gold { background: #FDF0D3; color: #E8A317; }
+    .rr-why .icon-green { background: #DFF5E6; color: #22B573; }
+
+    .rr-why .why-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--navy); margin: 0 0 6px; }
+    .rr-why .why-card p { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+
+    @media (min-width: 640px) {
+      .rr-why .container { padding: 0 28px; }
+      .rr-why { padding: 72px 0; }
+      .rr-why .why-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-why .section-title { font-size: 32px; }
+      .rr-why .why-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 960px) {
+      .rr-why .container { padding: 0 40px; }
+      .rr-why { padding: 96px 0; }
+      .rr-why .section-head { margin-bottom: 44px; }
+      .rr-why .section-title { font-size: 38px; }
+      .rr-why .why-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Why Choose R&amp;R</span>
@@ -471,51 +980,146 @@
 
     <div class="why-grid">
       <div class="why-card reveal">
-        <span class="why-icon icon-blue"><svg class="icon" width="24" height="24"><use href="#icon-store"></use></svg></span>
+        <span class="why-icon icon-blue"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
         <h3>4 Massive Floors</h3>
         <p>One of the largest kids shopping destinations in Vijayawada.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-pink"><svg class="icon" width="24" height="24"><use href="#icon-bike"></use></svg></span>
+        <span class="why-icon icon-pink"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h3>Huge Bicycle Collection</h3>
         <p>Geared, non-geared, and electric bicycles from trusted brands.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-purple"><svg class="icon" width="24" height="24"><use href="#icon-baby"></use></svg></span>
+        <span class="why-icon icon-purple"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h3>Complete Newborn Solutions</h3>
         <p>Everything parents need from birth onwards.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-gold"><svg class="icon" width="24" height="24"><use href="#icon-bag"></use></svg></span>
+        <span class="why-icon icon-gold"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
         <h3>One Stop Kids Store</h3>
         <p>Toys, sports, clothing, footwear, and baby essentials under one roof.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-green"><svg class="icon" width="24" height="24"><use href="#icon-tag"></use></svg></span>
+        <span class="why-icon icon-green"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M11 3h5a2 2 0 0 1 2 2v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-4-4a2 2 0 0 1 0-2.8l8-8A2 2 0 0 1 11 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="15" cy="8" r="1.3" fill="currentColor" stroke="none"/></svg></span>
         <h3>Discount Pricing</h3>
         <p>Enjoy attractive discounts across all categories.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-blue"><svg class="icon" width="24" height="24"><use href="#icon-truck"></use></svg></span>
+        <span class="why-icon icon-blue"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M3 7h11v9H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
         <h3>Convenient Shopping</h3>
         <p>In-store shopping, pickup, and home delivery available.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-pink"><svg class="icon" width="24" height="24"><use href="#icon-star"></use></svg></span>
+        <span class="why-icon icon-pink"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1 6.1L12 16.8 6.8 19.7l1-6.1L3.4 9.4l6-.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
         <h3>Trusted Brands</h3>
         <p>Only quality products from well-known manufacturers.</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-icon icon-purple"><svg class="icon" width="24" height="24"><use href="#icon-family"></use></svg></span>
+        <span class="why-icon icon-purple"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><circle cx="8" cy="7" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2M14 20v-1.5a3.5 3.5 0 0 1 3.5-3.5h1a3.5 3.5 0 0 1 3.5 3.5V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h3>Family Friendly Experience</h3>
         <p>Spacious showroom with dedicated sections for easy shopping.</p>
       </div>
     </div>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="why"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= FEATURED BRANDS ================= -->
-<section class="section brands" id="brands">
+<!-- ================= FEATURED BRANDS COMPONENT ================= -->
+<section class="rr-brands" id="brands" data-rr="brands">
+  <style>
+    .rr-brands {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-brands *, .rr-brands *::before, .rr-brands *::after { box-sizing: border-box; }
+    .rr-brands .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-brands .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-brands .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-brands .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-brands .section-title .pink { color: var(--pink); }
+
+    .rr-brands .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-brands .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-brands .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-brands .brand-group-title { text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--navy); margin: 0 0 18px; }
+
+    .rr-brands .brand-marquee {
+      overflow: hidden; margin: 0 0 20px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .rr-brands .brand-track { display: flex; gap: 14px; width: max-content; animation: rr-brand-marquee 22s linear infinite; }
+    .rr-brands .brand-marquee:hover .brand-track { animation-play-state: paused; }
+    @keyframes rr-brand-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .rr-brands .brand-pill {
+      flex-shrink: 0; background: #ffffff; border: 1.5px solid var(--hdr-secondary); border-radius: 999px;
+      padding: 12px 24px; font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy);
+      box-shadow: 0 8px 20px rgba(27, 42, 78, 0.06);
+    }
+
+    .rr-brands .brand-note { text-align: center; color: var(--gray); font-size: 12.5px; margin-top: 4px; }
+
+    @media (min-width: 640px) {
+      .rr-brands .container { padding: 0 28px; }
+      .rr-brands { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-brands .section-title { font-size: 32px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-brands .container { padding: 0 40px; }
+      .rr-brands { padding: 96px 0; }
+      .rr-brands .section-head { margin-bottom: 44px; }
+      .rr-brands .section-title { font-size: 38px; }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Featured Brands</span>
@@ -547,10 +1151,110 @@
   <div class="container">
     <p class="brand-note reveal">More brands across baby care, toys, clothing, and sports coming soon.</p>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="brands"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= GALLERY ================= -->
-<section class="section gallery" id="gallery">
+<!-- ================= GALLERY COMPONENT ================= -->
+<section class="rr-gallery" id="gallery" data-rr="gallery">
+  <style>
+    .rr-gallery {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-gallery *, .rr-gallery *::before, .rr-gallery *::after { box-sizing: border-box; }
+    .rr-gallery img { max-width: 100%; }
+    .rr-gallery .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-gallery .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-gallery .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-gallery .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-gallery .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-gallery .section-title .pink { color: var(--pink); }
+
+    .rr-gallery .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-gallery .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-gallery .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-gallery .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    .rr-gallery .gallery-tile {
+      position: relative; aspect-ratio: 1 / 1; border-radius: 20px; background: #F3F5F9; overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease; cursor: pointer;
+    }
+    .rr-gallery .gallery-tile:hover { transform: scale(1.04); box-shadow: 0 20px 40px rgba(27, 42, 78, 0.18); }
+    .rr-gallery .gallery-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .rr-gallery .gallery-tile:hover img { transform: scale(1.08); }
+
+    .rr-gallery .gallery-label {
+      position: absolute; left: 10px; bottom: 10px; z-index: 2; font-family: var(--font-display); font-weight: 700;
+      font-size: 11.5px; color: #fff; background: rgba(27, 42, 78, 0.55); backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 999px;
+    }
+
+    .rr-gallery .gallery-placeholder { background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .rr-gallery .gallery-placeholder .gallery-icon { color: var(--navy); opacity: 0.5; }
+    .rr-gallery .gallery-placeholder .gallery-label--static { position: static; color: var(--navy); background: rgba(255, 255, 255, 0.7); }
+
+    @media (min-width: 640px) {
+      .rr-gallery .container { padding: 0 28px; }
+      .rr-gallery { padding: 72px 0; }
+      .rr-gallery .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-gallery .section-title { font-size: 32px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-gallery .container { padding: 0 40px; }
+      .rr-gallery { padding: 96px 0; }
+      .rr-gallery .section-head { margin-bottom: 44px; }
+      .rr-gallery .section-title { font-size: 38px; }
+      .rr-gallery .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Gallery</span>
@@ -583,51 +1287,172 @@
         <span class="gallery-label">Kids Gift Store</span>
       </div>
       <div class="gallery-tile gallery-placeholder reveal" style="--g1:#DDF3F5;--g2:#B8C6E0;">
-        <svg class="icon gallery-icon" width="30" height="30"><use href="#icon-camera"></use></svg>
+        <svg class="icon gallery-icon" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="12" cy="14" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
         <span class="gallery-label gallery-label--static">Photo Coming Soon</span>
       </div>
       <div class="gallery-tile gallery-placeholder reveal" style="--g1:#FFF1F5;--g2:#ECAACC;">
-        <svg class="icon gallery-icon" width="30" height="30"><use href="#icon-camera"></use></svg>
+        <svg class="icon gallery-icon" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="12" cy="14" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
         <span class="gallery-label gallery-label--static">Photo Coming Soon</span>
       </div>
     </div>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="gallery"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= CUSTOMER REVIEWS ================= -->
-<section class="section reviews" id="reviews">
+<!-- ================= CUSTOMER REVIEWS COMPONENT ================= -->
+<section class="rr-reviews" id="reviews" data-rr="reviews">
+  <style>
+    .rr-reviews {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-reviews *, .rr-reviews *::before, .rr-reviews *::after { box-sizing: border-box; }
+    .rr-reviews a { text-decoration: none; color: inherit; }
+    .rr-reviews .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-reviews .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-reviews .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-reviews .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-reviews .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-reviews .section-title .pink { color: var(--pink); }
+
+    .rr-reviews .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-reviews .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-reviews .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-reviews .rating-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--hdr-secondary); padding: 8px 18px;
+      border-radius: 999px; margin-top: 16px; font-size: 12.5px; font-weight: 600; color: var(--navy);
+    }
+    .rr-reviews .rating-stars { color: #F5A623; letter-spacing: 2px; }
+
+    .rr-reviews .review-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+
+    .rr-reviews .review-card {
+      display: flex; flex-direction: column; gap: 14px; background: #ffffff; border-radius: 20px; padding: 22px 20px;
+      box-shadow: 0 14px 34px rgba(27, 42, 78, 0.07);
+    }
+    .rr-reviews .review-stars { color: #F5A623; letter-spacing: 2px; font-size: 15px; }
+    .rr-reviews .review-text { margin: 0; font-size: 13px; line-height: 1.6; color: var(--gray); font-style: italic; }
+
+    .rr-reviews .review-author { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+    .rr-reviews .review-avatar {
+      width: 38px; height: 38px; min-width: 38px; border-radius: 50%; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .rr-reviews .icon-blue { color: #2F6FED; } .rr-reviews .icon-pink { color: #FF4D94; } .rr-reviews .icon-purple { color: #8B5CF6; }
+    .rr-reviews .review-author strong { display: block; font-size: 12.5px; color: var(--navy); }
+    .rr-reviews .review-author span { font-size: 11px; color: var(--gray); }
+
+    .rr-reviews .section-cta { text-align: center; margin-top: 30px; }
+    .rr-reviews .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 24px; border-radius: 999px;
+      font-weight: 600; font-size: 15px; white-space: nowrap;
+    }
+    .rr-reviews .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+
+    @media (min-width: 480px) {
+      .rr-reviews .review-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 640px) {
+      .rr-reviews .container { padding: 0 28px; }
+      .rr-reviews { padding: 72px 0; }
+      .rr-reviews .review-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .rr-reviews .section-title { font-size: 32px; }
+      .rr-reviews .review-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 960px) {
+      .rr-reviews .container { padding: 0 40px; }
+      .rr-reviews { padding: 96px 0; }
+      .rr-reviews .section-head { margin-bottom: 44px; }
+      .rr-reviews .section-title { font-size: 38px; }
+    }
+  </style>
+
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Customer Reviews</span>
       <h2 class="section-title">What Parents <span class="pink">Say About Us</span></h2>
       <div class="rating-badge">
-        <span class="rating-stars">★★★★★</span>
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span>Google Rating</span>
       </div>
     </div>
 
     <div class="review-grid">
       <div class="review-card reveal">
-        <span class="review-stars">★★★★★</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p class="review-text">Your customers' Google review will appear here &mdash; connect your Google Business listing or paste a testimonial.</p>
         <div class="review-author">
-          <span class="review-avatar icon-blue"><svg class="icon" width="18" height="18"><use href="#icon-user"></use></svg></span>
+          <span class="review-avatar icon-blue"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
           <div><strong>Store Visit</strong><span>Add customer name</span></div>
         </div>
       </div>
       <div class="review-card reveal">
-        <span class="review-stars">★★★★★</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p class="review-text">Your customers' Google review will appear here &mdash; connect your Google Business listing or paste a testimonial.</p>
         <div class="review-author">
-          <span class="review-avatar icon-pink"><svg class="icon" width="18" height="18"><use href="#icon-user"></use></svg></span>
+          <span class="review-avatar icon-pink"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
           <div><strong>Store Visit</strong><span>Add customer name</span></div>
         </div>
       </div>
       <div class="review-card reveal">
-        <span class="review-stars">★★★★★</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p class="review-text">Your customers' Google review will appear here &mdash; connect your Google Business listing or paste a testimonial.</p>
         <div class="review-author">
-          <span class="review-avatar icon-purple"><svg class="icon" width="18" height="18"><use href="#icon-user"></use></svg></span>
+          <span class="review-avatar icon-purple"><svg class="icon" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
           <div><strong>Store Visit</strong><span>Add customer name</span></div>
         </div>
       </div>
@@ -637,10 +1462,122 @@
       <a href="#" class="btn btn-secondary">Read More Reviews</a>
     </div>
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="reviews"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<!-- ================= VISIT OUR SHOWROOM ================= -->
-<section class="section visit" id="visit">
+<!-- ================= VISIT OUR SHOWROOM COMPONENT ================= -->
+<section class="rr-visit" id="visit" data-rr="visit">
+  <style>
+    .rr-visit {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-visit *, .rr-visit *::before, .rr-visit *::after { box-sizing: border-box; }
+    .rr-visit a { text-decoration: none; color: inherit; }
+    .rr-visit .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-visit .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-visit .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-visit .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-visit .section-title .pink { color: var(--pink); }
+    .rr-visit .section-title.left { text-align: left; margin: 0 0 24px; }
+
+    .rr-visit .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-visit .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-visit .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-visit .visit-inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+
+    .rr-visit .visit-detail { display: flex; gap: 14px; margin-top: 20px; }
+    .rr-visit .visit-icon {
+      width: 42px; height: 42px; min-width: 42px; border-radius: 12px; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 17px;
+    }
+    .rr-visit .visit-detail strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy); margin-bottom: 4px; }
+    .rr-visit .visit-detail p { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+
+    .rr-visit .visit-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .rr-visit .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 16px; border-radius: 999px;
+      font-weight: 600; font-size: 13px; white-space: nowrap; flex: 1 1 140px;
+    }
+    .rr-visit .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+    .rr-visit .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+    .rr-visit .whatsapp-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--hdr-primary); color: #fff;
+      border-radius: 999px; padding: 13px 16px; font-weight: 600; font-size: 13px; white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(9, 173, 233, 0.32); transition: transform 0.2s ease, box-shadow 0.2s ease; flex: 1 1 140px;
+    }
+    .rr-visit .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(9, 173, 233, 0.4); }
+    .rr-visit .whatsapp-btn span { display: inline; }
+
+    .rr-visit .visit-visual { display: flex; align-items: center; justify-content: center; }
+    .rr-visit .visit-map {
+      width: 100%; aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 30px 60px rgba(27, 42, 78, 0.15); border: 1px solid rgba(184, 198, 224, 0.3);
+    }
+    .rr-visit .visit-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    @media (min-width: 640px) {
+      .rr-visit .container { padding: 0 28px; }
+      .rr-visit { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-visit .section-title { font-size: 32px; }
+      .rr-visit .visit-buttons .btn, .rr-visit .visit-buttons .whatsapp-btn { font-size: 14px; padding: 15px 22px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-visit .container { padding: 0 40px; }
+      .rr-visit { padding: 96px 0; }
+      .rr-visit .section-title { font-size: 38px; }
+      .rr-visit .visit-inner { grid-template-columns: 1.1fr 0.9fr; gap: 60px; }
+    }
+  </style>
+
   <div class="container visit-inner">
 
     <div class="visit-info reveal">
@@ -648,7 +1585,12 @@
       <h2 class="section-title left">Visit Rolls &amp; Rattles <span class="pink">Today</span></h2>
 
       <div class="visit-detail">
-        <span class="visit-icon"><svg class="icon" width="19" height="19"><use href="#icon-pin"></use></svg></span>
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </span>
         <div>
           <strong>Address</strong>
           <p>Dr. No. 6, PVRDL Edifice, 7-475/1, Opposite IDBI Bank, Tulasamma Nagar, Poranki, Andhra Pradesh &ndash; 521137</p>
@@ -656,7 +1598,12 @@
       </div>
 
       <div class="visit-detail">
-        <span class="visit-icon"><svg class="icon" width="19" height="19"><use href="#icon-clock"></use></svg></span>
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
         <div>
           <strong>Business Hours</strong>
           <p>Every Day &middot; 10:30 AM &ndash; 9:30 PM</p>
@@ -664,7 +1611,11 @@
       </div>
 
       <div class="visit-detail">
-        <span class="visit-icon"><svg class="icon" width="19" height="19"><use href="#icon-phone"></use></svg></span>
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
         <div>
           <strong>Contact</strong>
           <p>+91 88861 28686</p>
@@ -672,9 +1623,18 @@
       </div>
 
       <div class="visit-buttons">
-        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary"><svg class="icon" width="18" height="18"><use href="#icon-pin"></use></svg>Get Directions</a>
-        <a href="tel:+918886128686" class="btn btn-secondary"><svg class="icon" width="18" height="18"><use href="#icon-phone"></use></svg>Call Now</a>
-        <a href="#" class="whatsapp-btn"><svg class="icon" width="18" height="18"><use href="#icon-whatsapp"></use></svg><span>WhatsApp</span></a>
+        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+          Get Directions
+        </a>
+        <a href="tel:+918886128686" class="btn btn-secondary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg>
+          Call Now
+        </a>
+        <a href="#" class="whatsapp-btn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="currentColor" stroke="none"/></svg>
+          <span>WhatsApp</span>
+        </a>
       </div>
     </div>
 
@@ -691,8 +1651,33 @@
     </div>
 
   </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="visit"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
 </section>
 
-<script src="script.js"></script>
 </body>
 </html>

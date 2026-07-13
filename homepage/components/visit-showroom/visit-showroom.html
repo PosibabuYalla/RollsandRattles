@@ -1,0 +1,188 @@
+<!-- ================= VISIT OUR SHOWROOM COMPONENT ================= -->
+<section class="rr-visit" id="visit" data-rr="visit">
+  <style>
+    .rr-visit {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --blue: #2F6FED;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-visit *, .rr-visit *::before, .rr-visit *::after { box-sizing: border-box; }
+    .rr-visit a { text-decoration: none; color: inherit; }
+    .rr-visit .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-visit .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-visit .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-visit .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-visit .section-title .pink { color: var(--pink); }
+    .rr-visit .section-title.left { text-align: left; margin: 0 0 24px; }
+
+    .rr-visit .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-visit .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-visit .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-visit .visit-inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+
+    .rr-visit .visit-detail { display: flex; gap: 14px; margin-top: 20px; }
+    .rr-visit .visit-icon {
+      width: 42px; height: 42px; min-width: 42px; border-radius: 12px; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 17px;
+    }
+    .rr-visit .visit-detail strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy); margin-bottom: 4px; }
+    .rr-visit .visit-detail p { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+
+    .rr-visit .visit-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .rr-visit .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 16px; border-radius: 999px;
+      font-weight: 600; font-size: 13px; white-space: nowrap; flex: 1 1 140px;
+    }
+    .rr-visit .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35); }
+    .rr-visit .btn-secondary { background: #fff; color: var(--navy); box-shadow: 0 6px 20px rgba(27, 42, 78, 0.1); }
+    .rr-visit .whatsapp-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--hdr-primary); color: #fff;
+      border-radius: 999px; padding: 13px 16px; font-weight: 600; font-size: 13px; white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(9, 173, 233, 0.32); transition: transform 0.2s ease, box-shadow 0.2s ease; flex: 1 1 140px;
+    }
+    .rr-visit .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(9, 173, 233, 0.4); }
+    .rr-visit .whatsapp-btn span { display: inline; }
+
+    .rr-visit .visit-visual { display: flex; align-items: center; justify-content: center; }
+    .rr-visit .visit-map {
+      width: 100%; aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 30px 60px rgba(27, 42, 78, 0.15); border: 1px solid rgba(184, 198, 224, 0.3);
+    }
+    .rr-visit .visit-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    @media (min-width: 640px) {
+      .rr-visit .container { padding: 0 28px; }
+      .rr-visit { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-visit .section-title { font-size: 32px; }
+      .rr-visit .visit-buttons .btn, .rr-visit .visit-buttons .whatsapp-btn { font-size: 14px; padding: 15px 22px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-visit .container { padding: 0 40px; }
+      .rr-visit { padding: 96px 0; }
+      .rr-visit .section-title { font-size: 38px; }
+      .rr-visit .visit-inner { grid-template-columns: 1.1fr 0.9fr; gap: 60px; }
+    }
+  </style>
+
+  <div class="container visit-inner">
+
+    <div class="visit-info reveal">
+      <span class="eyebrow">Visit Our Showroom</span>
+      <h2 class="section-title left">Visit Rolls &amp; Rattles <span class="pink">Today</span></h2>
+
+      <div class="visit-detail">
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <div>
+          <strong>Address</strong>
+          <p>Dr. No. 6, PVRDL Edifice, 7-475/1, Opposite IDBI Bank, Tulasamma Nagar, Poranki, Andhra Pradesh &ndash; 521137</p>
+        </div>
+      </div>
+
+      <div class="visit-detail">
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <strong>Business Hours</strong>
+          <p>Every Day &middot; 10:30 AM &ndash; 9:30 PM</p>
+        </div>
+      </div>
+
+      <div class="visit-detail">
+        <span class="visit-icon">
+          <svg class="icon" width="19" height="19" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <strong>Contact</strong>
+          <p>+91 88861 28686</p>
+        </div>
+      </div>
+
+      <div class="visit-buttons">
+        <a href="https://maps.app.goo.gl/Bdpxa887ZbUXaaTX6" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+          Get Directions
+        </a>
+        <a href="tel:+918886128686" class="btn btn-secondary">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor" stroke="none"/></svg>
+          Call Now
+        </a>
+        <a href="#" class="whatsapp-btn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.9 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.2.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.1 1.6z" fill="currentColor" stroke="none"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="visit-visual reveal">
+      <div class="visit-map">
+        <iframe
+          src="https://www.google.com/maps?q=Rolls+%26+Rattles+Kids+Mart,+Poranki,+Vijayawada&amp;ll=16.4753873,80.709713&amp;z=16&amp;output=embed"
+          title="Rolls &amp; Rattles Kids Mart location on Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="visit"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

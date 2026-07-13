@@ -1,0 +1,343 @@
+<!-- ================= SHOP BY CATEGORY COMPONENT ================= -->
+<section class="rr-categories" id="categories" data-rr="categories">
+  <style>
+    .rr-categories {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-categories *, .rr-categories *::before, .rr-categories *::after { box-sizing: border-box; }
+    .rr-categories img { max-width: 100%; }
+    .rr-categories a { text-decoration: none; color: inherit; }
+    .rr-categories .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-categories .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-categories .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-categories .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-categories .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-categories .section-title .pink { color: var(--pink); }
+    .rr-categories .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-categories .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-categories .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-categories .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-categories .category-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+    .rr-categories .category-tile {
+      position: relative; overflow: hidden; border-radius: 26px; padding: 20px; min-height: 220px;
+      isolation: isolate; display: block;
+      transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+    }
+    .rr-categories .category-tile:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27, 42, 78, 0.16); }
+
+    .rr-categories .category-tile-bgicon {
+      position: absolute; top: -18px; right: -18px; opacity: 0.16; transform: rotate(-10deg);
+      transition: transform 0.5s ease, opacity 0.5s ease; z-index: 0;
+    }
+    .rr-categories .category-tile:hover .category-tile-bgicon { transform: rotate(0deg) scale(1.08); opacity: 0.24; }
+
+    .rr-categories .category-tile-photo {
+      position: absolute; z-index: 1; right: 0; bottom: 0; width: 58%; max-width: 210px; height: auto;
+      max-height: 92%; object-fit: contain; object-position: bottom right;
+      filter: drop-shadow(0 12px 16px rgba(27, 42, 78, 0.18));
+      transition: transform 0.35s ease; pointer-events: none;
+    }
+    .rr-categories .category-tile:hover .category-tile-photo { transform: scale(1.05) translateY(-4px); }
+
+    .rr-categories .category-tile-content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; max-width: 50%; }
+
+    .rr-categories .category-tile-icon {
+      width: 40px; height: 40px; min-width: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.8);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .rr-categories .category-tile-body { margin-top: auto; }
+    .rr-categories .category-tile-body h3 { font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--navy); margin: 0 0 6px; }
+    .rr-categories .category-tile-body p { margin: 0; font-size: 12.5px; line-height: 1.5; color: rgba(27, 42, 78, 0.7); }
+
+    .rr-categories .category-tile-cta {
+      display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; gap: 6px; margin-top: 14px;
+      font-weight: 600; font-size: 12.5px; color: var(--navy); background: #ffffff; padding: 10px 16px;
+      border-radius: 999px; box-shadow: 0 6px 16px rgba(27, 42, 78, 0.1);
+      transition: gap 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .rr-categories .category-tile-cta .icon { transition: transform 0.25s ease; }
+    .rr-categories .category-tile:hover .category-tile-cta { gap: 10px; background: var(--navy); color: #fff; }
+
+    .rr-categories .category-tile.cat-blue { background: linear-gradient(160deg, #EEF7FF, #DCEBFF); }
+    .rr-categories .category-tile.cat-pink { background: linear-gradient(160deg, #FFF1F7, #FDE0EC); }
+    .rr-categories .category-tile.cat-purple { background: linear-gradient(160deg, #F4F0FD, #EDE3FB); }
+    .rr-categories .category-tile.cat-gold { background: linear-gradient(160deg, #FFF8EB, #FDF0D3); }
+    .rr-categories .category-tile.cat-green { background: linear-gradient(160deg, #EAFAF1, #DFF5E6); }
+
+    .rr-categories .cat-blue .category-tile-bgicon, .rr-categories .cat-blue .category-tile-icon { color: #2F6FED; }
+    .rr-categories .cat-pink .category-tile-bgicon, .rr-categories .cat-pink .category-tile-icon { color: #FF4D94; }
+    .rr-categories .cat-purple .category-tile-bgicon, .rr-categories .cat-purple .category-tile-icon { color: #8B5CF6; }
+    .rr-categories .cat-gold .category-tile-bgicon, .rr-categories .cat-gold .category-tile-icon { color: #E8A317; }
+    .rr-categories .cat-green .category-tile-bgicon, .rr-categories .cat-green .category-tile-icon { color: #22B573; }
+
+    @media (min-width: 640px) {
+      .rr-categories .container { padding: 0 28px; }
+      .rr-categories { padding: 72px 0; }
+      .rr-categories .category-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-categories .section-title { font-size: 32px; }
+      .rr-categories .section-sub { font-size: 15.5px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-categories .container { padding: 0 40px; max-width: 1480px; }
+      .rr-categories { padding: 96px 0; }
+      .rr-categories .section-head { margin-bottom: 44px; }
+      .rr-categories .section-title { font-size: 38px; }
+      .rr-categories .category-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(230px, auto); grid-auto-flow: dense; gap: 22px; }
+      .rr-categories .category-tile { padding: 28px; }
+      .rr-categories .category-tile.cat-feature { grid-column: span 2; grid-row: span 2; min-height: 420px; padding: 30px; }
+      .rr-categories .category-tile.cat-feature .category-tile-content { max-width: 38%; }
+      .rr-categories .category-tile.cat-feature .category-tile-body h3 { font-size: 26px; }
+      .rr-categories .category-tile.cat-feature .category-tile-body p { font-size: 14.5px; }
+      .rr-categories .category-tile.cat-feature .category-tile-cta { font-size: 13.5px; padding: 12px 20px; }
+      .rr-categories .category-tile.cat-wide { grid-column: span 2; min-height: 220px; }
+      .rr-categories .category-tile.cat-wide .category-tile-content { max-width: 42%; }
+      .rr-categories .category-tile-bgicon { width: 130px; height: 130px; }
+      .rr-categories .category-tile.cat-feature .category-tile-bgicon { width: 170px; height: 170px; }
+      .rr-categories .category-tile-photo { max-width: 250px; max-height: 92%; }
+      .rr-categories .category-tile.cat-feature .category-tile-photo { width: 84%; max-width: 580px; max-height: 100%; right: 0; bottom: 0; margin-left: 20px; }
+      .rr-categories .category-tile.cat-wide .category-tile-photo { width: 50%; max-width: 300px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Shop by Category</span>
+      <h2 class="section-title">Explore Our <span class="pink">Product Categories</span></h2>
+      <p class="section-sub">Everything your child needs&mdash;from newborn care to bicycles&mdash;all under one roof.</p>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="../../products/bicycles.html" class="category-tile cat-blue cat-feature reveal">
+        <svg class="category-tile-bgicon" width="120" height="120" viewBox="0 0 24 24">
+          <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Bicycle-Store.webp" alt="Bicycles at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Bicycles</h3>
+            <p>Largest collection of geared, non-geared, and electric bicycles from trusted brands.</p>
+            <span class="category-tile-cta">Shop Bicycles <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/newborn-essentials.html" class="category-tile cat-pink reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Baby-Essentials-store.webp" alt="Newborn Essentials at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Newborn Essentials</h3>
+            <p>Feeding, walkers, prams, strollers, and daily baby care.</p>
+            <span class="category-tile-cta">Shop Newborn <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/ride-on-cars-bikes.html" class="category-tile cat-purple reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="2" y="13" width="20" height="5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="7" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Car-bike-scooty-store.webp" alt="Ride-On Cars &amp; Bikes at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="2" y="13" width="20" height="5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="7" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17" cy="18.3" r="1.7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Ride-On Cars &amp; Bikes</h3>
+            <p>Battery-operated cars, bikes, and fun mobility toys.</p>
+            <span class="category-tile-cta">Shop Ride-Ons <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/toys.html" class="category-tile cat-gold reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Playful-toys-store-1.webp" alt="Toys at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Toys</h3>
+            <p>Educational toys, soft toys, puzzles, and board games.</p>
+            <span class="category-tile-cta">Shop Toys <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/sports.html" class="category-tile cat-green cat-wide reveal">
+        <svg class="category-tile-bgicon" width="100" height="100" viewBox="0 0 24 24">
+          <path d="M8 4h8v4a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M12 12v3M9 20h6M9.5 17h5l.5 3H9l.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Sports-Store.webp" alt="Sports at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M8 4h8v4a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M12 12v3M9 20h6M9.5 17h5l.5 3H9l.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Sports</h3>
+            <p>Cricket, football, badminton, skating, swimming, and outdoor play equipment.</p>
+            <span class="category-tile-cta">Shop Sports Gear <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/stationery.html" class="category-tile cat-blue reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5a2.5 2.5 0 0 1 2.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Stationary-Store.webp" alt="Stationery at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5a2.5 2.5 0 0 1 2.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Stationery</h3>
+            <p>School essentials, art supplies, and craft products.</p>
+            <span class="category-tile-cta">Shop Stationery <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/clothing.html" class="category-tile cat-pink reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Kids-clothing-Store.webp" alt="Clothing at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Clothing (0&ndash;6 Years)</h3>
+            <p>Casual wear, party wear, and themed dresses.</p>
+            <span class="category-tile-cta">Shop Clothing <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="../../products/footwear.html" class="category-tile cat-purple reveal">
+        <svg class="category-tile-bgicon" width="90" height="90" viewBox="0 0 24 24">
+          <path d="M3 18v-3.5c0-.8.5-1.5 1.3-1.8L10 10.5 14 6c.6-.6 1.6-.6 2.2 0L18 7.8c.7.7 1.8.9 2.7.5l.6-.3c.8-.4 1.7.4 1.4 1.2l-.7 2c-.3.9-1.1 1.5-2 1.5H8l-2 3H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <img class="category-tile-photo" src="https://rollsandrattles.in/wp-content/uploads/2026/07/Kids-Footwear-Store.webp" alt="Footwear at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <div class="category-tile-content">
+          <span class="category-tile-icon">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24">
+              <path d="M3 18v-3.5c0-.8.5-1.5 1.3-1.8L10 10.5 14 6c.6-.6 1.6-.6 2.2 0L18 7.8c.7.7 1.8.9 2.7.5l.6-.3c.8-.4 1.7.4 1.4 1.2l-.7 2c-.3.9-1.1 1.5-2 1.5H8l-2 3H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="category-tile-body">
+            <h3>Footwear (0&ndash;6 Years)</h3>
+            <p>Comfortable and stylish footwear for babies and kids.</p>
+            <span class="category-tile-cta">Shop Footwear <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="categories"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

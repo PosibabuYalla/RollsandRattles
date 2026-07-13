@@ -1,0 +1,129 @@
+<!-- ================= FEATURED BRANDS COMPONENT ================= -->
+<section class="rr-brands" id="brands" data-rr="brands">
+  <style>
+    .rr-brands {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-brands *, .rr-brands *::before, .rr-brands *::after { box-sizing: border-box; }
+    .rr-brands .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-brands .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-brands .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-brands .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-brands .section-title .pink { color: var(--pink); }
+
+    .rr-brands .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-brands .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-brands .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-brands .brand-group-title { text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--navy); margin: 0 0 18px; }
+
+    .rr-brands .brand-marquee {
+      overflow: hidden; margin: 0 0 20px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .rr-brands .brand-track { display: flex; gap: 14px; width: max-content; animation: rr-brand-marquee 22s linear infinite; }
+    .rr-brands .brand-marquee:hover .brand-track { animation-play-state: paused; }
+    @keyframes rr-brand-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .rr-brands .brand-pill {
+      flex-shrink: 0; background: #ffffff; border: 1.5px solid var(--hdr-secondary); border-radius: 999px;
+      padding: 12px 24px; font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy);
+      box-shadow: 0 8px 20px rgba(27, 42, 78, 0.06);
+    }
+
+    .rr-brands .brand-note { text-align: center; color: var(--gray); font-size: 12.5px; margin-top: 4px; }
+
+    @media (min-width: 640px) {
+      .rr-brands .container { padding: 0 28px; }
+      .rr-brands { padding: 72px 0; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-brands .section-title { font-size: 32px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-brands .container { padding: 0 40px; }
+      .rr-brands { padding: 96px 0; }
+      .rr-brands .section-head { margin-bottom: 44px; }
+      .rr-brands .section-title { font-size: 38px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured Brands</span>
+      <h2 class="section-title">Trusted Brands <span class="pink">We Offer</span></h2>
+    </div>
+
+    <p class="brand-group-title reveal">Bicycle Brands</p>
+  </div>
+
+  <div class="brand-marquee reveal">
+    <div class="brand-track">
+      <span class="brand-pill">Hero</span>
+      <span class="brand-pill">Kross</span>
+      <span class="brand-pill">BSA</span>
+      <span class="brand-pill">Allwyn</span>
+      <span class="brand-pill">OyeKid</span>
+      <span class="brand-pill">Owpee</span>
+      <span class="brand-pill">R for Rabbit</span>
+      <span class="brand-pill" aria-hidden="true">Hero</span>
+      <span class="brand-pill" aria-hidden="true">Kross</span>
+      <span class="brand-pill" aria-hidden="true">BSA</span>
+      <span class="brand-pill" aria-hidden="true">Allwyn</span>
+      <span class="brand-pill" aria-hidden="true">OyeKid</span>
+      <span class="brand-pill" aria-hidden="true">Owpee</span>
+      <span class="brand-pill" aria-hidden="true">R for Rabbit</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="brand-note reveal">More brands across baby care, toys, clothing, and sports coming soon.</p>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="brands"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

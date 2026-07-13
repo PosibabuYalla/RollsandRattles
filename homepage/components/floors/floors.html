@@ -1,0 +1,324 @@
+<!-- ================= EXPLORE OUR 4 FLOORS COMPONENT ================= -->
+<section class="rr-floors" id="floors" data-rr="floors">
+  <style>
+    .rr-floors {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-floors *, .rr-floors *::before, .rr-floors *::after { box-sizing: border-box; }
+    .rr-floors .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-floors .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-floors .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-floors .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-floors .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-floors .section-title .pink { color: var(--pink); }
+    .rr-floors .section-sub { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--gray); }
+
+    .rr-floors .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-floors .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-floors .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-floors .floor-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 24px; }
+    .rr-floors .floor-tab {
+      display: flex; align-items: center; gap: 8px; background: #ffffff; border: 1.5px solid var(--hdr-secondary);
+      border-radius: 999px; padding: 10px 18px 10px 10px; font-weight: 600; font-size: 13px; color: var(--navy);
+      cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .rr-floors .floor-tab-badge {
+      width: 22px; height: 22px; min-width: 22px; border-radius: 50%; background: var(--hdr-secondary); color: var(--hdr-primary);
+      display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 11.5px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .rr-floors .floor-tab:hover { border-color: var(--hdr-primary); }
+    .rr-floors .floor-tab.active { background: var(--hdr-primary); border-color: var(--hdr-primary); color: #fff; box-shadow: 0 10px 24px rgba(9, 173, 233, 0.3); }
+    .rr-floors .floor-tab.active .floor-tab-badge { background: #fff; color: var(--hdr-primary); }
+
+    .rr-floors .floor-panel { display: none; background: #ffffff; border-radius: 24px; padding: 24px 18px; box-shadow: 0 20px 50px rgba(27, 42, 78, 0.08); }
+    .rr-floors .floor-panel.active { display: block; animation: rr-floor-fade-up 0.4s ease; }
+    @keyframes rr-floor-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    .rr-floors .floor-panel-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #F0F1F5; }
+    .rr-floors .floor-panel-icon {
+      width: 52px; height: 52px; min-width: 52px; border-radius: 15px; background: var(--hdr-secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+    }
+    .rr-floors .icon-blue { color: #2F6FED; } .rr-floors .icon-pink { color: #FF4D94; }
+    .rr-floors .icon-purple { color: #8B5CF6; } .rr-floors .icon-gold { color: #E8A317; }
+
+    .rr-floors .floor-panel-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--hdr-primary); margin-bottom: 4px; }
+    .rr-floors .floor-panel-head h3 { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--navy); margin: 0; }
+
+    .rr-floors .floor-groups { display: grid; grid-template-columns: 1fr; gap: 22px; }
+    .rr-floors .floor-group h4 { font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--navy); margin: 0 0 12px; }
+    .rr-floors .floor-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; }
+    .rr-floors .floor-list li { font-size: 13px; color: var(--gray); padding-left: 16px; position: relative; }
+    .rr-floors .floor-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--hdr-primary); }
+
+    .rr-floors .brand-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .rr-floors .brand-chip { background: var(--hdr-secondary); color: var(--navy); font-size: 12px; font-weight: 600; padding: 7px 14px; border-radius: 999px; }
+
+    @media (min-width: 640px) {
+      .rr-floors .container { padding: 0 28px; }
+      .rr-floors { padding: 72px 0; }
+      .rr-floors .floor-groups, .rr-floors .floor-groups--3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .rr-floors .section-title { font-size: 32px; }
+      .rr-floors .section-sub { font-size: 15.5px; }
+      .rr-floors .floor-groups--3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 960px) {
+      .rr-floors .container { padding: 0 40px; }
+      .rr-floors { padding: 96px 0; }
+      .rr-floors .section-head { margin-bottom: 44px; }
+      .rr-floors .section-title { font-size: 38px; }
+      .rr-floors .floor-tab { font-size: 14.5px; padding: 12px 22px 12px 12px; }
+      .rr-floors .floor-panel { padding: 36px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Explore Our 4 Floors</span>
+      <h2 class="section-title">Discover <span class="pink">Every Floor</span></h2>
+      <p class="section-sub">Each floor is thoughtfully organized to help you find exactly what your child needs.</p>
+    </div>
+
+    <div class="floor-tabs reveal" id="rrFloorTabs">
+      <button class="floor-tab active" type="button" data-floor="ground"><span class="floor-tab-badge">G</span>Ground Floor</button>
+      <button class="floor-tab" type="button" data-floor="first"><span class="floor-tab-badge">1</span>First Floor</button>
+      <button class="floor-tab" type="button" data-floor="second"><span class="floor-tab-badge">2</span>Second Floor</button>
+      <button class="floor-tab" type="button" data-floor="third"><span class="floor-tab-badge">3</span>Third Floor</button>
+    </div>
+
+    <div class="floor-panels reveal">
+
+      <div class="floor-panel active" data-floor="ground">
+        <div class="floor-panel-head">
+          <span class="floor-panel-icon icon-blue">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <span class="floor-panel-eyebrow">Ground Floor</span>
+            <h3>Bicycle World</h3>
+          </div>
+        </div>
+        <div class="floor-groups">
+          <div class="floor-group">
+            <h4>Categories</h4>
+            <ul class="floor-list">
+              <li>Non-Geared Cycles</li>
+              <li>Geared Cycles</li>
+              <li>Electric Cycles</li>
+              <li>Kids Cycles</li>
+              <li>Teen Cycles</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Brands</h4>
+            <div class="brand-chips">
+              <span class="brand-chip">Hero</span>
+              <span class="brand-chip">Kross</span>
+              <span class="brand-chip">BSA</span>
+              <span class="brand-chip">Allwyn</span>
+              <span class="brand-chip">OyeKid</span>
+              <span class="brand-chip">Owpee</span>
+              <span class="brand-chip">R for Rabbit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floor-panel" data-floor="first">
+        <div class="floor-panel-head">
+          <span class="floor-panel-icon icon-pink">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="16" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M7 17h9l2-6a4 4 0 0 0-4-3H9a4 4 0 0 0-4 4M18 8l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <span class="floor-panel-eyebrow">First Floor</span>
+            <h3>Kids Mobility &amp; Sports</h3>
+          </div>
+        </div>
+        <div class="floor-groups floor-groups--3">
+          <div class="floor-group">
+            <h4>Mobility</h4>
+            <ul class="floor-list">
+              <li>Walkers</li>
+              <li>Prams</li>
+              <li>Strollers</li>
+              <li>Baby Chairs</li>
+              <li>Tricycles</li>
+              <li>Cradles</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Ride-On Collection</h4>
+            <ul class="floor-list">
+              <li>Battery Cars</li>
+              <li>Battery Bikes</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Sports</h4>
+            <ul class="floor-list">
+              <li>Cricket</li>
+              <li>Football</li>
+              <li>Badminton</li>
+              <li>Swimming</li>
+              <li>Skating</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="floor-panel" data-floor="second">
+        <div class="floor-panel-head">
+          <span class="floor-panel-icon icon-purple">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <rect x="3" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="14" y="10.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="8.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <div>
+            <span class="floor-panel-eyebrow">Second Floor</span>
+            <h3>Baby &amp; Toy World</h3>
+          </div>
+        </div>
+        <div class="floor-groups floor-groups--3">
+          <div class="floor-group">
+            <h4>Newborn Essentials</h4>
+            <ul class="floor-list">
+              <li>Baby Care</li>
+              <li>Feeding</li>
+              <li>Bath</li>
+              <li>Hygiene</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Toys</h4>
+            <ul class="floor-list">
+              <li>Soft Toys</li>
+              <li>Educational Toys</li>
+              <li>Board Games</li>
+              <li>Learning Toys</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Other</h4>
+            <ul class="floor-list">
+              <li>Birthday Decorations</li>
+              <li>Stationery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="floor-panel" data-floor="third">
+        <div class="floor-panel-head">
+          <span class="floor-panel-icon icon-gold">
+            <svg class="icon" width="26" height="26" viewBox="0 0 24 24">
+              <path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7l4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <span class="floor-panel-eyebrow">Third Floor</span>
+            <h3>Fashion Corner</h3>
+          </div>
+        </div>
+        <div class="floor-groups floor-groups--3">
+          <div class="floor-group">
+            <h4>Clothing</h4>
+            <ul class="floor-list">
+              <li>Daily Wear</li>
+              <li>Party Wear</li>
+              <li>Theme Dresses</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Footwear</h4>
+            <ul class="floor-list">
+              <li>Shoes</li>
+              <li>Sandals</li>
+              <li>Baby Footwear</li>
+            </ul>
+          </div>
+          <div class="floor-group">
+            <h4>Age Group</h4>
+            <ul class="floor-list">
+              <li>0&ndash;6 Years</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="floors"]');
+      if (!root) return;
+
+      var floorTabs = root.querySelector('#rrFloorTabs');
+      if (floorTabs) {
+        var tabs = floorTabs.querySelectorAll('.floor-tab');
+        var panels = root.querySelectorAll('.floor-panel');
+        floorTabs.addEventListener('click', function (e) {
+          var tab = e.target.closest('.floor-tab');
+          if (!tab) return;
+          var floor = tab.dataset.floor;
+          tabs.forEach(function (t) { t.classList.toggle('active', t === tab); });
+          panels.forEach(function (p) { p.classList.toggle('active', p.dataset.floor === floor); });
+        });
+      }
+
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>

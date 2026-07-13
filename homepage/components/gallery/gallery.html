@@ -1,0 +1,150 @@
+<!-- ================= GALLERY COMPONENT ================= -->
+<section class="rr-gallery" id="gallery" data-rr="gallery">
+  <style>
+    .rr-gallery {
+      --navy: #1B2A4E;
+      --pink: #FF4D94;
+      --gray: #6B7280;
+      --hdr-primary: #09ADE9;
+      --hdr-secondary: #DDF3F5;
+      --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      display: block;
+      padding: 56px 0;
+      background: #ffffff;
+      font-family: var(--font-body);
+      color: var(--navy);
+    }
+    .rr-gallery *, .rr-gallery *::before, .rr-gallery *::after { box-sizing: border-box; }
+    .rr-gallery img { max-width: 100%; }
+    .rr-gallery .icon { flex-shrink: 0; vertical-align: middle; }
+    .rr-gallery .container { max-width: 1320px; margin: 0 auto; padding: 0 18px; }
+
+    .rr-gallery .section-head { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+    .rr-gallery .eyebrow {
+      display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--hdr-primary); background: var(--hdr-secondary);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .rr-gallery .section-title { font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.25; color: var(--navy); margin: 0; }
+    .rr-gallery .section-title .pink { color: var(--pink); }
+
+    .rr-gallery .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1); }
+    .rr-gallery .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rr-gallery .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    .rr-gallery .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    .rr-gallery .gallery-tile {
+      position: relative; aspect-ratio: 1 / 1; border-radius: 20px; background: #F3F5F9; overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease; cursor: pointer;
+    }
+    .rr-gallery .gallery-tile:hover { transform: scale(1.04); box-shadow: 0 20px 40px rgba(27, 42, 78, 0.18); }
+    .rr-gallery .gallery-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .rr-gallery .gallery-tile:hover img { transform: scale(1.08); }
+
+    .rr-gallery .gallery-label {
+      position: absolute; left: 10px; bottom: 10px; z-index: 2; font-family: var(--font-display); font-weight: 700;
+      font-size: 11.5px; color: #fff; background: rgba(27, 42, 78, 0.55); backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 999px;
+    }
+
+    .rr-gallery .gallery-placeholder { background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .rr-gallery .gallery-placeholder .gallery-icon { color: var(--navy); opacity: 0.5; }
+    .rr-gallery .gallery-placeholder .gallery-label--static { position: static; color: var(--navy); background: rgba(255, 255, 255, 0.7); }
+
+    @media (min-width: 640px) {
+      .rr-gallery .container { padding: 0 28px; }
+      .rr-gallery { padding: 72px 0; }
+      .rr-gallery .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    @media (min-width: 768px) {
+      .rr-gallery .section-title { font-size: 32px; }
+    }
+
+    @media (min-width: 960px) {
+      .rr-gallery .container { padding: 0 40px; }
+      .rr-gallery { padding: 96px 0; }
+      .rr-gallery .section-head { margin-bottom: 44px; }
+      .rr-gallery .section-title { font-size: 38px; }
+      .rr-gallery .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">A Glimpse <span class="pink">Inside Our Store</span></h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Rolls-And-Rattles-shop-in-Vijayawada-Poranki.webp" alt="Rolls &amp; Rattles Kids Mart showroom exterior in Poranki, Vijayawada" loading="lazy">
+        <span class="gallery-label">Showroom Exterior</span>
+      </div>
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Cycles-store-in-vijayawada.webp" alt="Bicycle section at Rolls &amp; Rattles Kids Mart, Vijayawada" loading="lazy">
+        <span class="gallery-label">Bicycle Section</span>
+      </div>
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Cycles-shop-in-poranki-vijayawada.webp" alt="Cycle showroom at Rolls &amp; Rattles Kids Mart, Poranki" loading="lazy">
+        <span class="gallery-label">Cycle Showroom</span>
+      </div>
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Car-Toys-in-Rolls-and-Rattles.webp" alt="Ride-on cars and toy cars at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <span class="gallery-label">Ride-On Cars</span>
+      </div>
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Toys-in-Rolls-and-Rattles.webp" alt="Toy collection at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <span class="gallery-label">Toy World</span>
+      </div>
+      <div class="gallery-tile reveal">
+        <img src="https://rollsandrattles.in/wp-content/uploads/2026/07/Kids-gift-store.webp" alt="Kids gift store section at Rolls &amp; Rattles Kids Mart" loading="lazy">
+        <span class="gallery-label">Kids Gift Store</span>
+      </div>
+      <div class="gallery-tile gallery-placeholder reveal" style="--g1:#DDF3F5;--g2:#B8C6E0;">
+        <svg class="icon gallery-icon" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="12" cy="14" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="gallery-label gallery-label--static">Photo Coming Soon</span>
+      </div>
+      <div class="gallery-tile gallery-placeholder reveal" style="--g1:#FFF1F5;--g2:#ECAACC;">
+        <svg class="icon gallery-icon" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="12" cy="14" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="gallery-label gallery-label--static">Photo Coming Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.querySelector('[data-rr="gallery"]');
+      if (!root) return;
+      var revealEls = root.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        var groups = new Map();
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var parent = el.parentElement;
+            var siblingIndex = groups.get(parent) || 0;
+            el.style.transitionDelay = Math.min(siblingIndex, 6) * 70 + 'ms';
+            groups.set(parent, siblingIndex + 1);
+            el.classList.add('in-view');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    })();
+  </script>
+</section>
